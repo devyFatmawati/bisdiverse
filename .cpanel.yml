@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/u1527319/fos/
+    - export DEPLOYPATH=/home/bisd6491/bisdiverse/
     - /bin/cp -R Modules $DEPLOYPATH
     - /bin/cp -R app $DEPLOYPATH
     - /bin/cp -R bootstrap $DEPLOYPATH
