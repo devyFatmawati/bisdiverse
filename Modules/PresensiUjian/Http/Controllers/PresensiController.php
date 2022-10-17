@@ -43,7 +43,7 @@ class PresensiController extends Controller
                                 $cekpresensi = Presensi::select()->where('no_rfid', $rfid)->where('matkul_id', $jadwal_ujian->first()->matkul_id)->get();
                                 if ($cekpresensi->count() == 0) {
                                     $mahasiswa = Mahasiswa::select()->where('id', $mahasiswa->mahasiswa_id)->get()->first();
-                                    // return $jadwal_ujian;
+                                    return $jadwal_ujian;
                                     $data = Presensi::create([
                                         'nama' => $mahasiswa->nama,
                                         'npm' => $mahasiswa->npm,
