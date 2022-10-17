@@ -1,0 +1,13 @@
+{
+    "name": "PresensiUjian",
+    "alias": "presensiujian",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\PresensiUjian\\Providers\\PresensiUjianServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
