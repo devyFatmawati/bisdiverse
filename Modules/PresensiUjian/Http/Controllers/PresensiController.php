@@ -31,7 +31,6 @@ class PresensiController extends Controller
                 $jam_now = Carbon::now()->format('H:i:s');
                 $jam_now_string = Carbon::now()->toDateTimeString();
                 $jadwal_ujian = JadwalUjian::select()->wheredate('tgl_ujian', $date_now)->wheretime('jam_mulai_ujian', '<=', $jam_now)->wheretime('jam_berakhir_ujian', '>=', $jam_now)->where('kelas_id', $mahasiswa->mahasiswa->kelas_id)->get();
-                return $jadwal_ujian;
                 if ($jadwal_ujian) {
                     if ($jadwal_ujian->first()) {
                         $masuk = $jadwal_ujian->first()->jam_mulai_ujian;
@@ -43,7 +42,6 @@ class PresensiController extends Controller
                                 $cekpresensi = Presensi::select()->where('no_rfid', $rfid)->where('matkul_id', $jadwal_ujian->first()->matkul_id)->get();
                                 if ($cekpresensi->count() == 0) {
                                     $mahasiswa = Mahasiswa::select()->where('id', $mahasiswa->mahasiswa_id)->get()->first();
-                                    return $jadwal_ujian;
                                     $data = Presensi::create([
                                         'nama' => $mahasiswa->nama,
                                         'npm' => $mahasiswa->npm,
