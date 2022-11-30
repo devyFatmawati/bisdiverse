@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->string('npm');
+            $table->string('no_rfid')->nullable();
+            $table->string('no_rfid_cadangan')->nullable();
             $table->string('kelas_id')->nullable();
             $table->string('no_ktp')->nullable();
             $table->string('alamat')->nullable();
