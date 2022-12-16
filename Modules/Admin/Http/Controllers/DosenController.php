@@ -2,9 +2,11 @@
 
 namespace Modules\Admin\Http\Controllers;
 
+use App\Imports\DosenImport;
 use Illuminate\Http\Request;
 use Modules\Admin\Entities\Dosen;
 use Illuminate\Routing\Controller;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Contracts\Support\Renderable;
 
 class DosenController extends Controller
@@ -15,7 +17,7 @@ class DosenController extends Controller
      */
     public function index()
     {
-        return view('admin::dosen.index',[
+        return view('admin::dosen.index', [
             'dosens' => Dosen::all(),
         ]);
     }
@@ -36,16 +38,21 @@ class DosenController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'nama' => 'required',
-            'kds' => 'required',
-            'nidn_nidk' => 'nullable',
-        ]);
+        if ($request->dosen) {
+            Excel::import(new DosenImport, request()->file('dosen'));
+            return redirect()->back()->with('success', 'Data Dosen Berhasil Ditambahkan');
+        } else {
+            $request->validate([
+                'nama' => 'required',
+                'kds' => 'required',
+                'nidn_nidk' => 'nullable',
+            ]);
 
-        $input = $request->all();
+            $input = $request->all();
 
-        Dosen::create($input);
-        return redirect()->back()->with('success', 'Data Dosen Berhasil Ditambahkan');
+            Dosen::create($input);
+            return redirect()->back()->with('success', 'Data Dosen Berhasil Ditambahkan');
+        }
     }
 
     /**
@@ -65,7 +72,7 @@ class DosenController extends Controller
      */
     public function edit($id)
     {
-        return view('admin::dosen.edit',[
+        return view('admin::dosen.edit', [
             'dosen' => Dosen::select()->where('id', $id)->get()->first(),
         ]);
     }

@@ -46,7 +46,7 @@
                     <td style="text-align: center">{{ $presensi->no_rfid }}</td>
                     <td>{{ $presensi->nama }}</td>
                     <td style="text-align: center">{{ $presensi->npm }}</td>
-                    <td style="text-align: center">{{ $presensi->kelas->kelas }}</td>
+                    <td style="text-align: center">{{ $presensi->kelas }}</td>
                     <td style="text-align: center">{{ $presensi->matkul->nama }}</td>
                     {{-- <td>{{ $presensi->dosen->nama }}</td> --}}
                     <td style="text-align: center">{{ $presensi->created_at->format('H:i') }}</td>

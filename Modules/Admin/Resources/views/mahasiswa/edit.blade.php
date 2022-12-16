@@ -55,18 +55,56 @@
                                             </div>
                                             <div class="col-md-6 col-12">
                                                 <div class="mb-1">
+                                                    <label class="form-label" for="first-name-column">No RFID</label>
+                                                    <input type="number" id="first-name-column" class="form-control"
+                                                        placeholder="Masukan No RFID" name="no_rfid" value="{{ $mahasiswa->no_rfid }}" required />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-12">
+                                                <div class="mb-1">
+                                                    <label class="form-label" for="first-name-column">No RFID
+                                                        Cadangan</label>
+                                                    <input type="number" id="first-name-column" class="form-control"
+                                                        placeholder="Masukan No rfid Cadangan" name="no_rfid_cadangan" value="{{ $mahasiswa->no_rfid_cadangan }}" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-12">
+                                                <div class="mb-1">
+                                                    <label class="form-label" for="first-name-column">Tahun Masuk</label>
+                                                    <input type="number" id="first-name-column" class="form-control"
+                                                        placeholder="Tahun Masuk" name="tahun_masuk" value="{{ $mahasiswa->tahun_masuk }}" required />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-12">
+                                                <div class="mb-1">
                                                     <label class="form-label" for="kelas">Kelas</label>
-                                                    <select class="select2 w-100" name="kelas_id" id="kelas" required>
-                                                        {{-- <option label="kelas"></option> --}}
-                                                        @foreach ($kelass as $kelas)
-                                                            @if (old('kelas_id', $mahasiswa->kelas_id) == $kelas->id)
-                                                                <option value="{{ $kelas->id }}" selected>
-                                                                    {{ $kelas->kelas }}</option>
-                                                            @else
-                                                                <option value="{{ $kelas->id }}">{{ $kelas->kelas }}
-                                                                </option>
-                                                            @endif
-                                                        @endforeach
+                                                    <select class="select2 w-100" name="kelas" id="kelas" required>
+                                                        @if (old('kelas', $mahasiswa->kelas) == $mahasiswa->kelas)
+                                                            <option value="{{ $mahasiswa->kelas }}" selected>
+                                                                {{ $mahasiswa->kelas }}</option>
+                                                            <option>A</option>
+                                                            <option>B</option>
+                                                            <option>C</option>
+                                                            <option>D</option>
+                                                            <option>E</option>
+                                                            <option>F</option>
+                                                            <option>G</option>
+                                                            <option>H</option>
+                                                            <option>I</option>
+                                                            <option>J</option>
+                                                        @else
+                                                            <option label="kelas"></option>
+                                                            <option>A</option>
+                                                            <option>B</option>
+                                                            <option>C</option>
+                                                            <option>D</option>
+                                                            <option>E</option>
+                                                            <option>F</option>
+                                                            <option>G</option>
+                                                            <option>H</option>
+                                                            <option>I</option>
+                                                            <option>J</option>
+                                                        @endif
                                                     </select>
                                                 </div>
                                             </div>
@@ -107,7 +145,8 @@
                                             </div>
                                             <div class="col-md-6 col-12">
                                                 <div class="mb-1">
-                                                    <label class="form-label" for="first-name-column">Desa/Kelurahan</label>
+                                                    <label class="form-label"
+                                                        for="first-name-column">Desa/Kelurahan</label>
                                                     <input type="text" id="first-name-column" class="form-control"
                                                         placeholder="Masukan Desa/Kelurahan Alamat Mahasiswa"
                                                         name="desa" value="{{ $mahasiswa->desa }}" />

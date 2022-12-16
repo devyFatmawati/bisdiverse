@@ -86,13 +86,13 @@
                                             <div class="col-md-6 col-12">
                                                 <div class="mb-1">
                                                     <label class="form-label" for="dosen">Dosen</label>
-                                                    <select class="select2 w-100" name="dosen_id" id="dosen" required>
+                                                    <select class="select2 w-100" name="dosen_kds" id="dosen" required>
                                                         @foreach ($dosens as $dosen)
-                                                            @if (old('dosen_id', $matkul->dosen_id) == $dosen->id)
-                                                                <option value="{{ $dosen->id }}" selected>
+                                                            @if (old('dosen_id', $matkul->dosen_kds) == $dosen->kds)
+                                                                <option value="{{ $dosen->kds }}" selected>
                                                                     {{ $dosen->nama }}</option>
                                                             @else
-                                                                <option value="{{ $dosen->id }}">{{ $dosen->nama }}
+                                                                <option value="{{ $dosen->kds }}">{{ $dosen->nama }}
                                                                 </option>
                                                             @endif
                                                         @endforeach

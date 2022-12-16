@@ -15,7 +15,7 @@ class Kelas extends Model
 
     public function jadwal_ujian()
     {
-        return $this->hasMany(JadwalUjian::class);
+        return $this->hasMany(JadwalUjian::class,'matkul_kode','kode');
     }
 
     public function mahasiswa()

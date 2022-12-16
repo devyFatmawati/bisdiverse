@@ -95,8 +95,8 @@
                                                 </div>
                                             </div>
                                             <div class="content-body">
-                                                <h6 class="mb-0">Kelas {{ $jadwal->kelas->kelas }}</h6>
-                                                <small>Angkatan {{ $jadwal->kelas->tahun }}</small>
+                                                <h6 class="mb-0">Kelas {{ $mahasiswa->kelas }}</h6>
+                                                <small>Angkatan {{ $mahasiswa->angkatan }}</small>
                                             </div>
                                         </div>
                                         <div class="d-flex flex-row meetings">
@@ -106,8 +106,8 @@
                                                 </div>
                                             </div>
                                             <div class="content-body">
-                                                <h6 class="mb-0">{{ $jadwal->ruangan->ruangan }}</h6>
-                                                <small>Gedung {{ $jadwal->ruangan->gedung }}, Lantai {{ $jadwal->ruangan->lantai }}</small>
+                                                <h6 class="mb-0">{{ $jadwal->ruangan }}</h6>
+                                                <small>Gedung {{ $jadwal->ruangan }}, Lantai {{ $jadwal->ruangan }}</small>
                                             </div>
                                         </div>
                                     </div>

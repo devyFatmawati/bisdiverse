@@ -126,7 +126,7 @@
                                     <tr>
                                         <td class="pe-1"><strong>Waktu/Ruangan</strong></td>
                                         <td>: {{ $ujian->jam_mulai_ujian }} -
-                                            {{ $ujian->jam_berakhir_ujian }}/{{ $ujian->ruangan->ruangan }}
+                                            {{ $ujian->jam_berakhir_ujian }}/{{ $ujian->ruangan }}
                                         </td>
                                     </tr>
                                     <tr>

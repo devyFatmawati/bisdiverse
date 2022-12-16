@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('jadwal_ujians', function (Blueprint $table) {
             $table->id();
             $table->string('jenis_ujian');
-            $table->string('matkul_id');
-            $table->string('dosen_id');
-            $table->string('kelas_id');
-            $table->string('ruangan_id');
+            $table->string('matkul_kode');
+            $table->string('dosen_kds');
+            $table->string('kelas');
+            $table->string('ruangan');
             $table->date('tgl_ujian');
             $table->time('jam_mulai_ujian');
             $table->time('jam_berakhir_ujian');

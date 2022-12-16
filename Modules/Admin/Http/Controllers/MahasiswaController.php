@@ -3,9 +3,11 @@
 namespace Modules\Admin\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Imports\MahasiswaImport;
 use Modules\Admin\Entities\Rfid;
 use Modules\Admin\Entities\Kelas;
 use Illuminate\Routing\Controller;
+use Maatwebsite\Excel\Facades\Excel;
 use Modules\Admin\Entities\Mahasiswa;
 use Illuminate\Contracts\Support\Renderable;
 
@@ -17,7 +19,7 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        return view('admin::mahasiswa.index',[
+        return view('admin::mahasiswa.index', [
             'mahasiswas' => Mahasiswa::all(),
         ]);
     }
@@ -42,32 +44,40 @@ class MahasiswaController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request;
-        $validateData = $request->validate([
-            'nama' => 'required',
-            'npm' => 'required',
-            'kelas_id' => 'required',
-            'no_ktp' => 'nullable',
-            'alamat' => 'nullable',
-            'kabkota' => 'nullable',
-            'kecamatan' => 'nullable',
-            'desa' => 'nullable',
-            'rt' => 'nullable',
-            'rw' => 'nullable',
-            'kode_pos' => 'nullable',
-            'no_telp' => 'nullable',
-            'tempat_lahir' => 'nullable',
-            'tgl_lahir' => 'nullable',
-            'ibu_kandung' => 'nullable',
-            'nama_ot' => 'nullable',
-            'hubungan_ot' => 'nullable',
-            'no_telp_ot' => 'nullable',
-            'asal_sekolah' => 'nullable',
-        ]);
+        if ($request->mahasiswa) {
+            // return $request->file('mahasiswa');
+            Excel::import(new MahasiswaImport, request()->file('mahasiswa'));
+            return redirect('/admin/mahasiswa')->with('success', 'Data Mahasiswa berhasil ditambahkan');
+        } else {
+            $validateData = $request->validate([
+                'nama' => 'required',
+                'npm' => 'required',
+                'no_rfid' => 'nullable',
+                'no_rfid_cadangan' => 'nullable',
+                'tahun_masuk' => 'nullable',
+                'kelas' => 'nullable',
+                'no_ktp' => 'nullable',
+                'alamat' => 'nullable',
+                'kabkota' => 'nullable',
+                'kecamatan' => 'nullable',
+                'desa' => 'nullable',
+                'rt' => 'nullable',
+                'rw' => 'nullable',
+                'kode_pos' => 'nullable',
+                'no_telp' => 'nullable',
+                'tempat_lahir' => 'nullable',
+                'tgl_lahir' => 'nullable',
+                'ibu_kandung' => 'nullable',
+                'nama_ot' => 'nullable',
+                'hubungan_ot' => 'nullable',
+                'no_telp_ot' => 'nullable',
+                'asal_sekolah' => 'nullable',
+            ]);
 
-        $input = $validateData;
-        Mahasiswa::create($input);
-        return redirect('/admin/mahasiswa')->with('success', 'Data Mahasiswa berhasil ditambahkan');
+            $input = $validateData;
+            Mahasiswa::create($input);
+            return redirect('/admin/mahasiswa')->with('success', 'Data Mahasiswa berhasil ditambahkan');
+        }
     }
 
     /**
@@ -106,7 +116,10 @@ class MahasiswaController extends Controller
         $rules = [
             'nama' => 'required',
             'npm' => 'required',
-            'kelas_id' => 'required',
+            'no_rfid' => 'nullable',
+            'no_rfid_cadangan' => 'nullable',
+            'tahun_masuk' => 'nullable',
+            'kelas' => 'required',
             'no_ktp' => 'nullable',
             'alamat' => 'nullable',
             'kabkota' => 'nullable',

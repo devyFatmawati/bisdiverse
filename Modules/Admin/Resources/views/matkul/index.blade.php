@@ -25,77 +25,123 @@
             </div>
             <div class="content-body">
                 <!-- Basic multiple Column Form section start -->
-                <section id="multiple-column-form">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4 class="card-title">Tambah Mata Kuliah</h4>
-                                </div>
-                                <div class="card-body">
-                                    <form class="form" method="POST" action="/admin/matkul">
-                                        @csrf
-                                        <div class="row">
-                                            <div class="col-md-6 col-12">
-                                                <div class="mb-1">
-                                                    <label class="form-label" for="first-name-column">Kode
-                                                        Matakuliah</label>
-                                                    <input type="number" id="first-name-column" class="form-control"
-                                                        placeholder="Kode" name="kode" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-12">
-                                                <div class="mb-1">
-                                                    <label class="form-label" for="semester">Semester</label>
-                                                    <select class="select2 w-100" name="semester" id="semester" required>
-                                                        <option label="semester"></option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                        <option value="5">5</option>
-                                                        <option value="6">6</option>
-                                                        <option value="7">7</option>
-                                                        <option value="8">8</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-12">
-                                                <div class="mb-1">
-                                                    <label class="form-label" for="last-name-column">Nama Matakuliah</label>
-                                                    <input type="text" id="last-name-column" class="form-control"
-                                                        placeholder="Nama" name="nama" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-12">
-                                                <div class="mb-1">
-                                                    <label class="form-label" for="last-name-column">SKS</label>
-                                                    <input type="text" id="last-name-column" class="form-control"
-                                                        placeholder="SKS" name="sks" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-12">
-                                                <div class="mb-1">
-                                                    <label class="form-label" for="dosen">Dosen</label>
-                                                    <select class="select2 w-100" name="dosen_id" id="dosen" required>
-                                                        <option label="dosen"></option>
-                                                        @foreach ($dosens as $dosen)
-                                                            <option value="{{ $dosen->id }}">{{ $dosen->nama }}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <button type="submit" class="btn btn-primary me-1">Submit</button>
-                                                <button type="reset" class="btn btn-outline-secondary">Reset</button>
-                                            </div>
+                <div class="row">
+                    <div class="col-9">
+                        <section id="multiple-column-form">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4 class="card-title">Tambah Mata Kuliah</h4>
                                         </div>
-                                    </form>
+                                        <div class="card-body">
+                                            <form class="form" method="POST" action="/admin/matkul">
+                                                @csrf
+                                                <div class="row">
+                                                    <div class="col-md-6 col-12">
+                                                        <div class="mb-1">
+                                                            <label class="form-label" for="first-name-column">Kode
+                                                                Matakuliah</label>
+                                                            <input type="number" id="first-name-column"
+                                                                class="form-control" placeholder="Kode" name="kode" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-12">
+                                                        <div class="mb-1">
+                                                            <label class="form-label" for="semester">Semester</label>
+                                                            <select class="select2 w-100" name="semester" id="semester"
+                                                                required>
+                                                                <option label="semester"></option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                                <option value="6">6</option>
+                                                                <option value="7">7</option>
+                                                                <option value="8">8</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-12">
+                                                        <div class="mb-1">
+                                                            <label class="form-label" for="last-name-column">Nama
+                                                                Matakuliah</label>
+                                                            <input type="text" id="last-name-column" class="form-control"
+                                                                placeholder="Nama" name="nama" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-12">
+                                                        <div class="mb-1">
+                                                            <label class="form-label" for="last-name-column">SKS</label>
+                                                            <input type="text" id="last-name-column" class="form-control"
+                                                                placeholder="SKS" name="sks" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-12">
+                                                        <div class="mb-1">
+                                                            <label class="form-label" for="dosen">Dosen</label>
+                                                            <select class="select2 w-100" name="dosen_kds" id="dosen"
+                                                                required>
+                                                                <option label="dosen"></option>
+                                                                @foreach ($dosens as $dosen)
+                                                                    <option value="{{ $dosen->kds }}">{{ $dosen->nama }}
+                                                                    </option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <button type="submit" class="btn btn-primary me-1">Submit</button>
+                                                        <button type="reset"
+                                                            class="btn btn-outline-secondary">Reset</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </section>
                     </div>
-                </section>
+                    <div class="col-3">
+                        <section id="multiple-column-form">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4 class="card-title">Tambahkan Sekaligus Matkul</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <form class="form" method="POST" action="/admin/matkul"
+                                                enctype="multipart/form-data">
+                                                @csrf
+                                                <div class="row">
+                                                    <div class="col-md-12 col-12">
+                                                        <div class="mb-1">
+                                                            <label class="form-label" for="first-name-column">Silahkan
+                                                                Upload file
+                                                                Exel</label>
+                                                            <input type="file" id="first-name-column"
+                                                                class="form-control" accept=".xlsx,.csv" name="matkul"
+                                                                required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <button type="submit"
+                                                            class="btn btn-primary me-1">Submit</button>
+                                                        <button type="reset"
+                                                            class="btn btn-outline-secondary">Reset</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
                 <section>
                     <div class="row">
                         <div class="col-12">
@@ -122,7 +168,11 @@
                                                 <td style="text-align: center">{{ $matkul->semester }}</td>
                                                 <td>{{ $matkul->nama }}</td>
                                                 <td style="text-align: center">{{ $matkul->sks }}</td>
-                                                <td>{{ $matkul->dosen->nama }}</td>
+                                                @if (isset($matkul->dosen->nama))
+                                                    <td>{{ $matkul->dosen->nama }}</td>
+                                                    @else
+                                                    <td>Kode Dosen tidak terdaftar</td>
+                                                @endif
                                                 <td style="text-align: center">
                                                     <div class="dropdown">
                                                         <button type="button"
@@ -137,8 +187,8 @@
                                                                 <i data-feather="edit-2" class="me-50"></i>
                                                                 <span>Edit</span>
                                                             </a>
-                                                            <form action="/admin/matkul/{{ $matkul->id }}" method="post"
-                                                                class="d-inline">
+                                                            <form action="/admin/matkul/{{ $matkul->id }}"
+                                                                method="post" class="d-inline">
                                                                 @method('delete')
                                                                 @csrf
                                                                 <a class="dropdown-item" href="#"

@@ -45,14 +45,14 @@ class AdminController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'matkul_id' => 'required',
+            'matkul_kode' => 'required',
             'tgl_ujian' => 'required',
             'jenis_ujian' => 'required',
             'jam_mulai_ujian' => 'required',
             'jam_berakhir_ujian' => 'required',
-            'kelas_id' => 'required',
-            'dosen_id' => 'required',
-            'ruangan_id' => 'required',
+            'kelas' => 'required',
+            'dosen_kds' => 'required',
+            'ruangan' => 'required',
         ]);
 
         $input = $request->all();

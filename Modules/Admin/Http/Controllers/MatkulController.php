@@ -3,9 +3,11 @@
 namespace Modules\Admin\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Imports\MatkulImport;
 use Modules\Admin\Entities\Dosen;
 use Illuminate\Routing\Controller;
 use Modules\Admin\Entities\Matkul;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Contracts\Support\Renderable;
 
 class MatkulController extends Controller
@@ -38,18 +40,23 @@ class MatkulController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'semester' => 'required',
-            'kode' => 'required',
-            'nama' => 'required',
-            'sks' => 'required',
-            'dosen_id' => 'required',
-        ]);
+        if ($request->matkul) {
+            Excel::import(new MatkulImport, request()->file('matkul'));
+            return redirect()->back()->with('success', 'Data Matkul Berhasil Ditambahkan');
+        } else {
+            $request->validate([
+                'semester' => 'required',
+                'kode' => 'required',
+                'nama' => 'required',
+                'sks' => 'required',
+                'dosen_kds' => 'required',
+            ]);
 
-        $input = $request->all();
+            $input = $request->all();
 
-        Matkul::create($input);
-        return redirect()->back()->with('success', 'Data Matkul Berhasil Ditambahkan');
+            Matkul::create($input);
+            return redirect()->back()->with('success', 'Data Matkul Berhasil Ditambahkan');
+        }
     }
 
     /**
@@ -88,7 +95,7 @@ class MatkulController extends Controller
             'kode' => 'required',
             'nama' => 'required',
             'sks' => 'required',
-            'dosen_id' => 'required',
+            'dosen_kds' => 'required',
         ];
 
         $input = $request->validate($rules);

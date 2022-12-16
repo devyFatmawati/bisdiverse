@@ -72,11 +72,11 @@
                                                 <td style="text-align: center">{{ $jadwal->tgl_ujian }}</td>
                                                 <td style="text-align: center">{{ $jadwal->jam_mulai_ujian }} -
                                                     {{ $jadwal->jam_berakhir_ujian }}</td>
-                                                <td style="text-align: center">{{ $jadwal->matkul->kode }}</td>
+                                                <td style="text-align: center">{{ $jadwal->matkul_kode }}</td>
                                                 <td>{{ $jadwal->matkul->nama }}</td>
                                                 <td>{{ $jadwal->dosen->nama }}</td>
-                                                <td style="text-align: center">{{ $jadwal->kelas->kelas }}</td>
-                                                <td style="text-align: center">{{ $jadwal->ruangan->ruangan }}</td>
+                                                <td style="text-align: center">{{ $jadwal->kelas }}</td>
+                                                <td style="text-align: center">{{ $jadwal->ruangan }}</td>
                                             </tr>
                                         @endforeach
                                     </tbody>
@@ -112,11 +112,11 @@
                                         </div>
                                         <div class="col-12 col-md-6">
                                             <label class="form-label" for="matkul">Matakuliah</label>
-                                            <select id="matkul" name="matkul_id" class="form-select"
+                                            <select id="matkul" name="matkul_kode" class="form-select"
                                                 aria-label="Default select example" required>
                                                 <option label=""></option>
                                                 @foreach ($matkuls as $matkul)
-                                                    <option value="{{ $matkul->id }}">{{ $matkul->nama }}</option>
+                                                    <option value="{{ $matkul->kode }}">{{ $matkul->nama }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -136,31 +136,40 @@
                                         </div>
                                         <div class="col-12 col-md-6">
                                             <label class="form-label" for="kelas_id">Kelas</label>
-                                            <select id="kelas_id" name="kelas_id" class="form-select"
+                                            <select id="kelas_id" name="kelas" class="form-select"
                                                 aria-label="Default select example" required>
                                                 <option selected>Silahkan Pilih Kelas</option>
-                                                @foreach ($kelass as $kelas)
-                                                    <option value="{{ $kelas->id }}">{{ $kelas->kelas }} ({{ $kelas->tahun }})</option>
-                                                @endforeach
+                                                <option >A</option>
+                                                <option >B</option>
+                                                <option >C</option>
+                                                <option >D</option>
+                                                <option >E</option>
+                                                <option >F</option>
+                                                <option >G</option>
+                                                <option >H</option>
+                                                <option >I</option>
+                                                <option >J</option>
+                                                <option >K</option>
+                                                <option >L</option>
                                             </select>
                                         </div>
                                         <div class="col-12 col-md-6">
                                             <label class="form-label" for="dosen_id">Dosen Penguji</label>
-                                            <select id="dosen_id" name="dosen_id" class="form-select"
+                                            <select id="dosen_id" name="dosen_kds" class="form-select"
                                                 aria-label="Default select example" required>
                                                 <option selected>Silahkan Pilih Dosen</option>
                                                 @foreach ($dosens as $dosen)
-                                                    <option value="{{ $dosen->id }}">{{ $dosen->nama }}</option>
+                                                    <option value="{{ $dosen->kds }}">{{ $dosen->nama }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
                                         <div class="col-12 col-md-6">
                                             <label class="form-label" for="ruangan_id">Ruang Ujian</label>
-                                            <select id="ruangan_id" name="ruangan_id" class="form-select"
+                                            <select id="ruangan_id" name="ruangan" class="form-select"
                                                 aria-label="Default select example" required>
                                                 <option selected>Silahkan Pilih Ruangan</option>
                                                 @foreach ($ruangans as $ruangan)
-                                                    <option value="{{ $ruangan->id }}">{{ $ruangan->ruangan }}</option>
+                                                    <option value="{{ $ruangan->ruangan }}">{{ $ruangan->ruangan }}</option>
                                                 @endforeach
                                             </select>
                                         </div>

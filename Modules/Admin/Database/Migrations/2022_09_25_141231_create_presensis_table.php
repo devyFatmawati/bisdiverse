@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->string('npm');
-            $table->string('kelas_id');
-            $table->string('matkul_id');
+            $table->string('kelas');
+            $table->string('matkul_kode');
             $table->string('no_rfid');
             $table->string('jenis_ujian');
             $table->timestamps();

@@ -19,8 +19,9 @@ class RekapPresensiController extends Controller
     {
         $rekap = null;
         if (Request('matkul') && Request('kelas') && Request('tanggal')) {
-            $rekap = Presensi::select()->where('matkul_id', Request('matkul'))->where('kelas_id', Request('kelas'))->wheredate('created_at', Request('tanggal'))->get();
+            $rekap = Presensi::select()->where('matkul_kode', Request('matkul'))->where('kelas', Request('kelas'))->wheredate('created_at', Request('tanggal'))->get();
         }
+        // return $rekap;
         return view('admin::rekap-presensi.index', [
             'kelass' => Kelas::all(),
             'matkuls' => Matkul::all(),

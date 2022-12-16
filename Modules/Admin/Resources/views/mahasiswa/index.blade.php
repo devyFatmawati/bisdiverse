@@ -63,11 +63,7 @@
                                                 <td style="text-align: center">{{ $loop->iteration }}</td>
                                                 <td style="text-align: left">{{ $mahasiswa->nama }}</td>
                                                 <td style="text-align: center">{{ $mahasiswa->npm }}</td>
-                                                <td style="text-align: center">
-                                                    @if ($mahasiswa->kelas)
-                                                        {{ $mahasiswa->kelas->kelas }}
-                                                    @endif
-                                                </td>
+                                                <td style="text-align: center">{{ $mahasiswa->kelas }}</td>
                                                 <td style="text-align: center">{{ $mahasiswa->no_ktp }}</td>
                                                 <td style="text-align: center">
                                                     {{ $mahasiswa->tempat_lahir }}/{{ $mahasiswa->tgl_lahir }}</td>
@@ -88,8 +84,8 @@
                                                                 <i data-feather="edit-2" class="me-50"></i>
                                                                 <span>Edit</span>
                                                             </a>
-                                                            <form action="/admin/mahasiswa/{{ $mahasiswa->id }}" method="post"
-                                                                class="d-inline">
+                                                            <form action="/admin/mahasiswa/{{ $mahasiswa->id }}"
+                                                                method="post" class="d-inline">
                                                                 @method('delete')
                                                                 @csrf
                                                                 <a class="dropdown-item" href="#"

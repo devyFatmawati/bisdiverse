@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('nama');
             $table->string('kode');
             $table->string('sks');
-            $table->string('dosen_id')->nullable();
+            $table->string('dosen_kds')->nullable();
             $table->timestamps();
         });
     }

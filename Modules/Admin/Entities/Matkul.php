@@ -22,7 +22,7 @@ class Matkul extends Model
     }
     public function dosen()
     {
-        return $this->belongsTo(Dosen::class);
+        return $this->belongsTo(Dosen::class,'dosen_kds','kds');
     }
 
     protected static function newFactory()

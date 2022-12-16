@@ -15,15 +15,15 @@ class JadwalUjian extends Model
 
     public function dosen()
     {
-        return $this->belongsTo(Dosen::class);
+        return $this->belongsTo(Dosen::class, 'dosen_kds','kds');
     }
     public function kelas()
     {
-        return $this->belongsTo(Kelas::class);
+        return $this->hasMany(Kelas::class);
     }
     public function matkul()
     {
-        return $this->belongsTo(Matkul::class, 'matkul_id', 'id');
+        return $this->belongsTo(Matkul::class, 'matkul_kode', 'kode');
     }
     public function ruangan()
     {

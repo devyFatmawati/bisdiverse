@@ -52,49 +52,97 @@
             </div>
             <div class="content-body">
                 <!-- Basic multiple Column Form section start -->
-                <section id="multiple-column-form">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4 class="card-title">Dosen</h4>
-                                </div>
-                                <div class="card-body">
-                                    <form class="form" method="POST" action="/admin/dosen">
-                                        @csrf
-                                        <div class="row">
-                                            <div class="col-md-6 col-12">
-                                                <div class="mb-1">
-                                                    <label class="form-label" for="first-name-column">Nama Dosen</label>
-                                                    <input type="text" id="first-name-column" class="form-control"
-                                                        placeholder="Nama Dosen" name="nama" required />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-12">
-                                                <div class="mb-1">
-                                                    <label class="form-label" for="first-name-column">Kode Dosen</label>
-                                                    <input type="number" id="first-name-column" class="form-control"
-                                                        placeholder="Kode Dosen" name="kds" required />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-12">
-                                                <div class="mb-1">
-                                                    <label class="form-label" for="first-name-column">NIDN / NIDK</label>
-                                                    <input type="text" id="first-name-column" class="form-control"
-                                                        placeholder="NIDN / NIDK" name="nidn_nidk" />
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <button type="submit" class="btn btn-primary me-1">Submit</button>
-                                                <button type="reset" class="btn btn-outline-secondary">Reset</button>
-                                            </div>
+                <div class="row">
+                    <div class="col-9">
+                        <section id="multiple-column-form">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4 class="card-title">Dosen</h4>
                                         </div>
-                                    </form>
+                                        <div class="card-body">
+                                            <form class="form" method="POST" action="/admin/dosen">
+                                                @csrf
+                                                <div class="row">
+                                                    <div class="col-md-6 col-12">
+                                                        <div class="mb-1">
+                                                            <label class="form-label" for="first-name-column">Nama
+                                                                Dosen</label>
+                                                            <input type="text" id="first-name-column"
+                                                                class="form-control" placeholder="Nama Dosen" name="nama"
+                                                                required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-12">
+                                                        <div class="mb-1">
+                                                            <label class="form-label" for="first-name-column">Kode
+                                                                Dosen</label>
+                                                            <input type="number" id="first-name-column"
+                                                                class="form-control" placeholder="Kode Dosen" name="kds"
+                                                                required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-12">
+                                                        <div class="mb-1">
+                                                            <label class="form-label" for="first-name-column">NIDN /
+                                                                NIDK</label>
+                                                            <input type="text" id="first-name-column"
+                                                                class="form-control" placeholder="NIDN / NIDK"
+                                                                name="nidn_nidk" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <button type="submit" class="btn btn-primary me-1">Submit</button>
+                                                        <button type="reset"
+                                                            class="btn btn-outline-secondary">Reset</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </section>
                     </div>
-                </section>
+                    <div class="col-3">
+                        <section id="multiple-column-form">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4 class="card-title">Tambahkan Sekaligus Dosen</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <form class="form" method="POST" action="/admin/dosen"
+                                                enctype="multipart/form-data">
+                                                @csrf
+                                                <div class="row">
+                                                    <div class="col-md-12 col-12">
+                                                        <div class="mb-1">
+                                                            <label class="form-label" for="first-name-column">Silahkan
+                                                                Upload file
+                                                                Exel</label>
+                                                            <input type="file" id="first-name-column"
+                                                                class="form-control" accept=".xlsx,.csv" name="dosen"
+                                                                required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <button type="submit"
+                                                            class="btn btn-primary me-1">Submit</button>
+                                                        <button type="reset"
+                                                            class="btn btn-outline-secondary">Reset</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
                 <section>
                     <div class="row">
                         <div class="col-12">

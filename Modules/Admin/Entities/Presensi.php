@@ -19,7 +19,7 @@ class Presensi extends Model
     }
     public function matkul()
     {
-        return $this->belongsTo(Matkul::class);
+        return $this->belongsTo(Matkul::class,'matkul_kode','kode');
     }
 
     protected static function newFactory()

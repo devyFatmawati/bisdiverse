@@ -42,55 +42,100 @@
                 </div>
             </div>
             <div class="content-body">
-
-                <section class="basic-select2">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4 class="card-title">Rekap Absensi</h4>
-                                </div>
-                                <div class="card-body">
-                                    <form action="/admin/rekap-presensi">
-                                        <div class="row">
-                                            <!-- Basic -->
-                                            <div class="col-md-4 mb-1">
-                                                <label class="form-label" for="matkul">Mata Kuliah</label>
-                                                <select class="select2 form-select" id="matkul" name="matkul" required>
-                                                    <option>Silahkan Pilih Matakuliah</option>
-                                                    @foreach ($matkuls as $matkul)
-                                                        <option value="{{ $matkul->id }}">{{ $matkul->nama }}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                            <div class="col-md-4 mb-1">
-                                                <label class="form-label" for="kelas">Kelas</label>
-                                                <select class="select2 form-select" id="kelas" name="kelas">
-                                                    <option>Silahkan Pilih Kelas</option>
-                                                    @foreach ($kelass as $kelas)
-                                                        <option value="{{ $kelas->id }}">{{ $kelas->kelas }} ({{ $kelas->tahun }})</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                            <div class="col-md-4 col-12">
-                                                <div class="mb-1">
-                                                    <label class="form-label" for="last-name-column">Tangal</label>
-                                                    <input type="date" id="last-name-column" class="form-control"
-                                                        placeholder="Last Name" name="tanggal"
-                                                        value="{{ request('tanggal') }}" />
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <button type="submit" class="btn btn-primary me-1">Submit</button>
-                                                <button type="reset" class="btn btn-outline-secondary">Reset</button>
-                                            </div>
+                <div class="row">
+                    <div class='col-9'>
+                        <section class="basic-select2">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4 class="card-title">Rekap Absensi</h4>
                                         </div>
-                                    </form>
+                                        <div class="card-body">
+                                            <form action="/admin/rekap-presensi">
+                                                <div class="row">
+                                                    <!-- Basic -->
+                                                    <div class="col-md-4 mb-1">
+                                                        <label class="form-label" for="matkul">Mata Kuliah</label>
+                                                        <select class="select2 form-select" id="matkul" name="matkul"
+                                                            required>
+                                                            <option>Silahkan Pilih Matakuliah</option>
+                                                            @foreach ($matkuls as $matkul)
+                                                                <option value="{{ $matkul->kode }}">{{ $matkul->nama }}
+                                                                </option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-4 mb-1">
+                                                        <label class="form-label" for="kelas">Kelas</label>
+                                                        <select class="select2 form-select" id="kelas" name="kelas">
+                                                            <option>Silahkan Pilih Kelas</option>
+                                                            @foreach ($kelass as $kelas)
+                                                                <option value="{{ $kelas->kelas }}">{{ $kelas->kelas }}
+                                                                    ({{ $kelas->tahun }})
+                                                                </option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-4 col-12">
+                                                        <div class="mb-1">
+                                                            <label class="form-label" for="last-name-column">Tangal</label>
+                                                            <input type="date" id="last-name-column" class="form-control"
+                                                                placeholder="Last Name" name="tanggal"
+                                                                value="{{ request('tanggal') }}" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <button type="submit" class="btn btn-primary me-1">Submit</button>
+                                                        <button type="reset"
+                                                            class="btn btn-outline-secondary">Reset</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </section>
                     </div>
-                </section>
+                    <div class="col-3">
+                        <section id="multiple-column-form">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4 class="card-title">Tambahkan Presensi</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <form class="form" method="POST" action="/presensiujian"
+                                                enctype="multipart/form-data">
+                                                @csrf
+                                                <div class="row">
+                                                    <div class="col-md-12 col-12">
+                                                        <div class="mb-1">
+                                                            <label class="form-label" for="first-name-column">Silahkan
+                                                                Upload file
+                                                                Exel</label>
+                                                            <input type="file" id="first-name-column"
+                                                                class="form-control" accept=".xlsx,.csv" name="presensi"
+                                                                required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <button type="submit"
+                                                            class="btn btn-primary me-1">Submit</button>
+                                                        <button type="reset"
+                                                            class="btn btn-outline-secondary">Reset</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
                 <!-- Basic Floating Label Form section end -->
                 @if ($presensis)
                     <section id="basic-datatable">
@@ -117,7 +162,7 @@
                                                     <td style="text-align: center">{{ $presensi->no_rfid }}</td>
                                                     <td>{{ $presensi->nama }}</td>
                                                     <td style="text-align: center">{{ $presensi->npm }}</td>
-                                                    <td style="text-align: center">{{ $presensi->kelas->kelas }}</td>
+                                                    <td style="text-align: center">{{ $presensi->kelas }}</td>
                                                     <td style="text-align: center">{{ $presensi->matkul->nama }}</td>
                                                     {{-- <td>{{ $presensi->dosen->nama }}</td> --}}
                                                     <td style="text-align: center">

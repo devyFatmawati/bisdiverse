@@ -30,6 +30,37 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
+                                    <h4 class="card-title">Tambahkan Sekaligus Mahasiswa</h4>
+                                </div>
+                                <div class="card-body">
+                                    <form class="form" method="POST" action="/admin/mahasiswa"
+                                        enctype="multipart/form-data">
+                                        @csrf
+                                        <div class="row">
+                                            <div class="col-md-12 col-12">
+                                                <div class="mb-1">
+                                                    <label class="form-label" for="first-name-column">Silahkan Upload file
+                                                        Exel</label>
+                                                    <input type="file" id="first-name-column" class="form-control"
+                                                        accept=".xlsx,.csv" name="mahasiswa" required />
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-primary me-1">Submit</button>
+                                                <button type="reset" class="btn btn-outline-secondary">Reset</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="multiple-column-form">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
                                     <h4 class="card-title">Tambahkan Mahasiswa</h4>
                                 </div>
                                 <div class="card-body">
@@ -52,12 +83,40 @@
                                             </div>
                                             <div class="col-md-6 col-12">
                                                 <div class="mb-1">
+                                                    <label class="form-label" for="first-name-column">No RFID</label>
+                                                    <input type="number" id="first-name-column" class="form-control"
+                                                        placeholder="Masukan No RFID" name="no_rfid" required />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-12">
+                                                <div class="mb-1">
+                                                    <label class="form-label" for="first-name-column">No RFID Cadangan</label>
+                                                    <input type="number" id="first-name-column" class="form-control"
+                                                        placeholder="Masukan No rfid Cadangan" name="no_rfid_cadangan" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-12">
+                                                <div class="mb-1">
+                                                    <label class="form-label" for="first-name-column">Tahun Masuk</label>
+                                                    <input type="number" id="first-name-column" class="form-control"
+                                                        placeholder="Tahun Masuk" name="tahun_masuk" required />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-12">
+                                                <div class="mb-1">
                                                     <label class="form-label" for="kelas">Kelas</label>
-                                                    <select class="select2 w-100" name="kelas_id" id="kelas" required>
+                                                    <select class="select2 w-100" name="kelas" id="kelas" required>
                                                         <option label="kelas"></option>
-                                                        @foreach ($kelass as $kelas)
-                                                            <option value="{{ $kelas->id }}">{{ $kelas->kelas }}</option>
-                                                        @endforeach
+                                                        <option >A</option>
+                                                        <option >B</option>
+                                                        <option >C</option>
+                                                        <option >D</option>
+                                                        <option >E</option>
+                                                        <option >F</option>
+                                                        <option >G</option>
+                                                        <option >H</option>
+                                                        <option >I</option>
+                                                        <option >J</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -89,12 +148,14 @@
                                                 <div class="mb-1">
                                                     <label class="form-label" for="first-name-column">Kecamatan</label>
                                                     <input type="text" id="first-name-column" class="form-control"
-                                                        placeholder="Masukan Kecamatan Alamat Mahasiswa" name="kecamatan" />
+                                                        placeholder="Masukan Kecamatan Alamat Mahasiswa"
+                                                        name="kecamatan" />
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-12">
                                                 <div class="mb-1">
-                                                    <label class="form-label" for="first-name-column">Desa/Kelurahan</label>
+                                                    <label class="form-label"
+                                                        for="first-name-column">Desa/Kelurahan</label>
                                                     <input type="text" id="first-name-column" class="form-control"
                                                         placeholder="Masukan Desa/Kelurahan Alamat Mahasiswa"
                                                         name="desa" />

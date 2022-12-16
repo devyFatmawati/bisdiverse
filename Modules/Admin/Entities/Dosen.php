@@ -15,7 +15,11 @@ class Dosen extends Model
 
     public function jadwal_ujian()
     {
-        return $this->hasMany(JadwalUjian::class);
+        return $this->hasMany(JadwalUjian::class,'dosen_kds','kds');
+    }
+    public function matkul()
+    {
+        return $this->hasMany(Matkul::class,'dosen_kds','kds');
     }
 
     protected static function newFactory()
