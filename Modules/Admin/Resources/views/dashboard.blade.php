@@ -97,7 +97,7 @@
                                 <div class="modal-body pb-5 px-sm-5 pt-50">
                                     <div class="text-center mb-2">
                                         <h1 class="mb-1">Tambahkan Jadwal</h1>
-                                        <p>Silahkan Isi Form Dibawah Ini Untuk Membuat Jadwal Ujian.</p>
+                                        <p>Silahkan Isi Form Dibawah Ini Untuk Membuat Jadwal.</p>
                                     </div>
                                     <form id="editUserForm" class="row gy-1 pt-75" method="POST" action="/admin">
                                         @csrf
@@ -157,7 +157,7 @@
                                             </select>
                                         </div>
                                         <div class="col-12 col-md-6">
-                                            <label class="form-label" for="dosen_id">Dosen Penguji</label>
+                                            <label class="form-label" for="dosen_id">Dosen</label>
                                             <select id="dosen_id" name="dosen_kds" class="form-select"
                                                 aria-label="Default select example" required>
                                                 <option selected>Silahkan Pilih Dosen</option>
