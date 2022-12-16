@@ -102,12 +102,15 @@
                                     <form id="editUserForm" class="row gy-1 pt-75" method="POST" action="/admin">
                                         @csrf
                                         <div class="col-12 col-md-6">
-                                            <label class="form-label" for="jenis">Jenis Ujian</label>
+                                            <label class="form-label" for="jenis">Jenis</label>
                                             <select id="jenis" name="jenis_ujian" class="form-select"
                                                 aria-label="Default select example" required>
-                                                <option label="" ></option>
+                                                <option label=""></option>
                                                 <option>UTS</option>
                                                 <option>UAS</option>
+                                                <option>Seminar/Webinar</option>
+                                                <option>Talkshow</option>
+                                                <option>Lainnya</option>
                                             </select>
                                         </div>
                                         <div class="col-12 col-md-6">
@@ -121,16 +124,16 @@
                                             </select>
                                         </div>
                                         <div class="col-12 col-md-6">
-                                            <label class="form-label" for="tgl_ujian">Tanggal Ujian</label>
+                                            <label class="form-label" for="tgl_ujian">Tanggal</label>
                                             <input type="date" id="tgl_ujian" name="tgl_ujian" class="form-control" />
                                         </div>
                                         <div class="col-12 col-md-6">
-                                            <label class="form-label" for="jam_mulai_ujian">Jam Mulai Ujian</label>
+                                            <label class="form-label" for="jam_mulai_ujian">Jam Mulai</label>
                                             <input type="time" id="jam_mulai_ujian" name="jam_mulai_ujian"
                                                 class="form-control" />
                                         </div>
                                         <div class="col-12 col-md-6">
-                                            <label class="form-label" for="jam_berakhir_ujian">Jam Berakhir Ujian</label>
+                                            <label class="form-label" for="jam_berakhir_ujian">Jam Berakhir</label>
                                             <input type="time" id="jam_berakhir_ujian" name="jam_berakhir_ujian"
                                                 class="form-control" />
                                         </div>
@@ -139,18 +142,18 @@
                                             <select id="kelas_id" name="kelas" class="form-select"
                                                 aria-label="Default select example" required>
                                                 <option selected>Silahkan Pilih Kelas</option>
-                                                <option >A</option>
-                                                <option >B</option>
-                                                <option >C</option>
-                                                <option >D</option>
-                                                <option >E</option>
-                                                <option >F</option>
-                                                <option >G</option>
-                                                <option >H</option>
-                                                <option >I</option>
-                                                <option >J</option>
-                                                <option >K</option>
-                                                <option >L</option>
+                                                <option>A</option>
+                                                <option>B</option>
+                                                <option>C</option>
+                                                <option>D</option>
+                                                <option>E</option>
+                                                <option>F</option>
+                                                <option>G</option>
+                                                <option>H</option>
+                                                <option>I</option>
+                                                <option>J</option>
+                                                <option>K</option>
+                                                <option>L</option>
                                             </select>
                                         </div>
                                         <div class="col-12 col-md-6">
@@ -164,12 +167,13 @@
                                             </select>
                                         </div>
                                         <div class="col-12 col-md-6">
-                                            <label class="form-label" for="ruangan_id">Ruang Ujian</label>
+                                            <label class="form-label" for="ruangan_id">Ruang</label>
                                             <select id="ruangan_id" name="ruangan" class="form-select"
                                                 aria-label="Default select example" required>
                                                 <option selected>Silahkan Pilih Ruangan</option>
                                                 @foreach ($ruangans as $ruangan)
-                                                    <option value="{{ $ruangan->ruangan }}">{{ $ruangan->ruangan }}</option>
+                                                    <option value="{{ $ruangan->ruangan }}">{{ $ruangan->ruangan }}
+                                                    </option>
                                                 @endforeach
                                             </select>
                                         </div>
