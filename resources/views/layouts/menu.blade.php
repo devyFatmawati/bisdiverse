@@ -4,9 +4,11 @@
         role="navigation" data-menu="menu-wrapper" data-menu-type="floating-nav">
         <div class="navbar-header">
             <ul class="nav navbar-nav flex-row">
-                <li class="nav-item me-auto"><a class="navbar-brand" href="/"><span class="brand-logo">
+                <li class="nav-item me-auto"><a class="navbar-brand" href="/">
+                        <span class="brand-logo">
+                            <img src="../../../favicon.png" alt="">
                         </span>
-                        <img src="../../../Logo_sidebar.png" alt="" height="30">
+                        <img src="../../../logo_tulisan.png" height="30"alt="">
                     </a></li>
                 <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pe-0" data-bs-toggle="collapse"><i
                             class="d-block d-xl-none text-primary toggle-icon font-medium-4" data-feather="x"></i></a>
@@ -22,10 +24,12 @@
                         class="nav-link d-flex align-items-center" href="/"><i data-feather="home"></i><span
                             class="menu-title text-truncate" data-i18n="Dashboards">Dashboards</span></a>
                 </li>
+                @if (Module::collections()->has('PresensiUjian'))
                 <li class="{{ Request::is('presensiujian*') ? 'active' : 'nav-item' }}"><a
                         class="nav-link d-flex align-items-center" href="/presensiujian"><i data-feather="users"></i><span
                             class="menu-title text-truncate" data-i18n="Dashboards">Presensi Ujian</span></a>
                 </li>
+                @endif
                 {{-- <li class="{{ Request::is('simulasi') ? 'active' : 'nav-item' }} "><a
                         class="nav-link d-flex align-items-center" href="/simulasi"><i data-feather="monitor"></i><span
                             class="menu-title text-truncate" data-i18n="home">Simulasi</span></a>

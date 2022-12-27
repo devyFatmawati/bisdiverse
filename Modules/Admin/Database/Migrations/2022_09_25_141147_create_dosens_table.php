@@ -16,8 +16,9 @@ return new class extends Migration
         Schema::create('dosens', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('kds')->nullable();
-            $table->string('nidn_nidk')->nullable();
+            $table->text('kds')->nullable();
+            $table->text('nidn_nidk')->nullable();
+            $table->string('user_id')->nullable();
             $table->timestamps();
         });
     }

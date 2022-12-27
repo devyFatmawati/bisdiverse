@@ -1,0 +1,11 @@
+{
+    "name": "Magang",
+    "alias": "magang",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Magang\\Providers\\MagangServiceProvider"
+    ],
+    "files": []
+}

@@ -13,11 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('rfids', function (Blueprint $table) {
+        Schema::create('history_pengajuan_magangs', function (Blueprint $table) {
             $table->id();
-            $table->string('mahasiswa_id');
-            $table->string('no_rfid');
-            $table->string('device_id');
+            $table->text('magang_id');
+            $table->text('status');
+            $table->text('jabatan');
+            $table->text('catatan');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rfids');
+        Schema::dropIfExists('history_pengajuan_magangs');
     }
 };

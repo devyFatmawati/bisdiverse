@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use Modules\Admin\Entities\Dosen;
+use Modules\Admin\Entities\Mahasiswa;
 use Modules\Form\Entities\FormPprPembiayaan;
 use Modules\Form\Entities\SkpdPembiayaan;
 use Modules\Pasar\Entities\PasarPembiayaan;
@@ -24,9 +26,32 @@ class UserController extends Controller
     public function index()
     {
         // return $data_debiturumkm;
+        $role = Role::select()->where('user_id', Auth::user()->id)->get()->first();
+        $data = null;
+        $extend = ' ';
+        if (isset($role)) {
+            if ($role->jabatan_id == 0) {
+                $data = null;
+                $extend = 'admin::';
+            } elseif ($role->jabatan_id == 1) {
+                $data = Dosen::select()->where('user_id', Auth::user()->id)->get()->first();
+                $extend = 'kaprodi::';
+            } elseif ($role->jabatan_id == 2) {
+                $data = Dosen::select()->where('user_id', Auth::user()->id)->get()->first();
+                $extend = 'dosen::';
+            } elseif ($role->jabatan_id == 3) {
+                $data = Mahasiswa::select()->where('user_id', Auth::user()->id)->get()->first();
+                $extend = 'mahasiswa::';
+            } else {
+                $data = null;
+                $extend = ' ';
+            }
+        }
         return view('profile', [
-            'role' => Role::select()->where('user_id', Auth::user()->id)->get()->first(),
+            'role' => $role,
             'user' => User::select()->where('id', Auth::user()->id)->get()->first(),
+            'data' => $data,
+            'extend' => $extend,
         ]);
     }
 

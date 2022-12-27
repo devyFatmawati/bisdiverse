@@ -16,7 +16,7 @@
                                 <div class="card-body">
                                     <h2 class="text-primary">Selamat Datang Di Bisdiverse</h2>
                                     <p class="card-text mb-2">
-                                        <span>System Terintegrasi </span><span class="fw-bolder">Prodi Bisnis Digital
+                                        <span>Sistem Terintegrasi </span><span class="fw-bolder">Prodi Bisnis Digital
                                             Universitas Pakuan</span>
                                     </p>
                                     <form class="kb-search-input">
@@ -101,6 +101,12 @@
                             </div>
                             <div class="modal-body">
                                 <div class="row">
+                                    @if (Module::collections()->has('Magang'))
+                                        <div class="col-md-6 mt-2">
+                                            <a href="/magang" class="btn btn-primary btn-block form-control">Magang
+                                            </a>
+                                        </div>
+                                    @endif
                                     <div class="col-md-6 mt-2">
                                         <a href="/pengajuan" class="btn btn-primary btn-block form-control">Seminar
                                         </a>
@@ -111,10 +117,6 @@
                                     </div>
                                     <div class="col-md-6 mt-2">
                                         <a href="/pengajuan" class="btn btn-primary btn-block form-control">Judul Skripsi
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6 mt-2">
-                                        <a href="/pengajuan" class="btn btn-primary btn-block form-control">Magang
                                         </a>
                                     </div>
                                     <div class="col-md-6 mt-2">

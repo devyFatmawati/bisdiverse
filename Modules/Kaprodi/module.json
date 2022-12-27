@@ -1,0 +1,11 @@
+{
+    "name": "Kaprodi",
+    "alias": "kaprodi",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Kaprodi\\Providers\\KaprodiServiceProvider"
+    ],
+    "files": []
+}

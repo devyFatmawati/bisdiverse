@@ -25,35 +25,27 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if (Auth::user()){
-            $role=Role::select()->where('user_id',Auth::user()->id)->get()->first();
-        }else{
-            $role=false;
+        if (Auth::user()) {
+            $role = Role::select()->where('user_id', Auth::user()->id)->get()->first();
+        } else {
+            $role = false;
         }
 
-        $url='/';
+        $url = '/';
 
-        if ($role){
-            if ($role->jabatan_id==0) {
-                    $url='/admin';
+        if ($role) {
+            if ($role->jabatan_id == 0) {
+                $url = '/admin';
+            } elseif ($role->jabatan_id == 1) {
+                $url = '/kaprodi';
+            } elseif ($role->jabatan_id == 2) {
+                $url = '/dosen';
+            } elseif ($role->jabatan_id == 3) {
+                $url = '/mahasiswa';
+            } else {
+                $url = '/';
             }
-            elseif ($role->jabatan_id==1) {
-                    $url='/mahasiswa';
-            }
-            elseif ($role->jabatan_id==2) {
-                    $url='/umkm';
-            }
-            elseif ($role->jabatan_id==3) {
-                    $url='/ppr';
-            }
-            elseif ($role->jabatan_id==4) {
-                    $url='/staff';
-            }
-            else{
-                $url='/';
-            }
-        }
-        else{
+        } else {
             return view('index');
         }
         return Redirect($url);

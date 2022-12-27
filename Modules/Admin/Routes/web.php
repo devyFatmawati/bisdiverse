@@ -17,10 +17,13 @@ use Modules\Admin\Http\Controllers\KelasController;
 use Modules\Admin\Http\Controllers\MatkulController;
 use Modules\Admin\Http\Controllers\RuanganController;
 use Modules\Admin\Http\Controllers\MahasiswaController;
+use Modules\Admin\Http\Controllers\UserDosenController;
+use Modules\Admin\Http\Controllers\UserKaprodiController;
 use Modules\Admin\Http\Controllers\LihatPresensiController;
 use Modules\Admin\Http\Controllers\PrintPresensiController;
 use Modules\Admin\Http\Controllers\RekapPresensiController;
 use Modules\Admin\Http\Controllers\RfidMahasiswaController;
+use Modules\Admin\Http\Controllers\UserMahasiswaController;
 
 Route::prefix('admin')->middleware(['auth:sanctum','verified', 'role:0', 'divisi:0', 'jabatan:0'])->group(function() {
     Route::resource('/', AdminController::class);
@@ -33,4 +36,7 @@ Route::prefix('admin')->middleware(['auth:sanctum','verified', 'role:0', 'divisi
     Route::resource('/rekap-presensi', RekapPresensiController::class);
     Route::resource('/lihat-presensi', LihatPresensiController::class);
     Route::resource('/print-presensi', PrintPresensiController::class);
+    Route::resource('/user-mahasiswa', UserMahasiswaController::class);
+    Route::resource('/user-dosen', UserDosenController::class);
+    Route::resource('/user-kaprodi', UserKaprodiController::class);
 });

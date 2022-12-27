@@ -18,11 +18,13 @@ class Role
      */
     public function handle(Request $request, Closure $next, $role)
     {
-        $cekrole=DB::table('roles')->where('user_id', Auth::user()->id)->get()->first();
+        $cekrole = DB::table('roles')->where('user_id', Auth::user()->id)->get()->first();
         // return $cekrole;
         // ddd ($cekrole);
-        if($cekrole->role_id==$role){
-            return $next($request);
+        if (isset($cekrole->role_id)) {
+            if ($cekrole->role_id == $role) {
+                return $next($request);
+            }
         }
         return redirect('/');
     }

@@ -17,18 +17,21 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->string('npm');
-            $table->string('no_rfid')->nullable();
-            $table->string('no_rfid_cadangan')->nullable();
+            $table->text('no_rfid')->nullable();
+            $table->text('no_rfid_cadangan')->nullable();
             $table->string('tahun_masuk')->nullable();
+            $table->string('konsentrasi')->nullable();
+            $table->string('ipk')->nullable();
             $table->string('kelas')->nullable();
-            $table->string('no_ktp')->nullable();
+            $table->text('no_ktp')->nullable();
             $table->string('alamat')->nullable();
+            $table->string('provinsi')->nullable();
             $table->string('kabkota')->nullable();
             $table->string('kecamatan')->nullable();
             $table->string('desa')->nullable();
-            $table->string('rt')->nullable();
-            $table->string('rw')->nullable();
-            $table->string('kode_pos')->nullable();
+            $table->text('rt')->nullable();
+            $table->text('rw')->nullable();
+            $table->text('kode_pos')->nullable();
             $table->string('no_telp')->nullable();
             $table->string('tempat_lahir')->nullable();
             $table->string('tgl_lahir')->nullable();
@@ -37,6 +40,7 @@ return new class extends Migration
             $table->string('hubungan_ot')->nullable();
             $table->string('no_telp_ot')->nullable();
             $table->string('asal_sekolah')->nullable();
+            $table->string('user_id')->nullable();
             $table->timestamps();
         });
     }

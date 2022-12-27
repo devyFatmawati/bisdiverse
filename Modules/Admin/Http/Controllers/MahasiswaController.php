@@ -4,7 +4,6 @@ namespace Modules\Admin\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Imports\MahasiswaImport;
-use Modules\Admin\Entities\Rfid;
 use Modules\Admin\Entities\Kelas;
 use Illuminate\Routing\Controller;
 use Maatwebsite\Excel\Facades\Excel;
@@ -31,7 +30,6 @@ class MahasiswaController extends Controller
     public function create()
     {
         return view('admin::mahasiswa.tambah', [
-            'kartus' => Rfid::select()->where('mahasiswa_id', null)->get(),
             'kelass' => Kelas::all(),
 
         ]);

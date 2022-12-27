@@ -90,9 +90,9 @@
         </div>
         <div class="navbar-container d-flex content">
             <div class="bookmark-wrapper d-flex align-items-center">
-                {{-- <ul class="nav navbar-nav d-xl-none">
+                <ul class="nav navbar-nav d-xl-none">
                     <li class="nav-item"><a class="nav-link menu-toggle" href="#"><i class="ficon" data-feather="menu"></i></a></li>
-                </ul> --}}
+                </ul>
                 <ul class="nav navbar-nav bookmark-icons">
                     <li class="nav-item d-none d-lg-block"><img src="../../../LOGO.png" height="50" alt="">
                     </li>
@@ -106,9 +106,9 @@
                             aria-expanded="false">
                             <div class="user-nav d-sm-flex d-none"><span
                                     class="user-name fw-bolder">{{ Auth::user()->name }}</span><span
-                                    class="user-status">Admin</span></div><span class="avatar"><img class="round"
-                                    src="../../../logofeb.png" alt="avatar" height="40" width="40"><span
-                                    class="avatar-status-online"></span></span>
+                                    class="user-status">Belum Memiliki Role User</span></div><span class="avatar"><img
+                                    class="round" src="{{ asset('storage/' . Auth::user()->foto) }}" alt="avatar" height="40"
+                                    width="40"><span class="avatar-status-online"></span></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user">
                             <form method="POST" action="logout">
@@ -128,6 +128,10 @@
                             <div class="user-nav d-sm-flex d-none"><span class="user-name fw-bolder">Login</span><span
                                     class="user-status">{{ carbon\Carbon::now()->isoformat('dddd, D MMMM Y') }}</span>
                             </div>
+                            <span class="avatar"><img class="round" src="../../../login.png" alt="avatar"
+                                    height="40" width="40">
+                                <span class="avatar-status-online"></span>
+                            </span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user">
                             <a class="dropdown-item" href="/login"><i class="me-50" data-feather="log-in"></i>
@@ -139,4 +143,3 @@
         </div>
     </nav>
     <!-- END: Header-->
-

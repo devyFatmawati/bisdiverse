@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
 <!-- BEGIN: Head-->
@@ -10,16 +9,21 @@
     <title>Presensi Bisnis Digital</title>
     <link rel="apple-touch-icon" href="../../../favicon.png">
     <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600"
+        rel="stylesheet">
 
     <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/vendors.min.css">
     <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/charts/apexcharts.css">
     {{-- <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/extensions/toastr.min.css"> --}}
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/tables/datatable/dataTables.bootstrap5.min.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/tables/datatable/responsive.bootstrap5.min.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/tables/datatable/buttons.bootstrap5.min.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/tables/datatable/rowGroup.bootstrap5.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="../../../app-assets/vendors/css/tables/datatable/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="../../../app-assets/vendors/css/tables/datatable/responsive.bootstrap5.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="../../../app-assets/vendors/css/tables/datatable/buttons.bootstrap5.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="../../../app-assets/vendors/css/tables/datatable/rowGroup.bootstrap5.min.css">
     <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/pickers/flatpickr/flatpickr.min.css">
     <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/forms/select/select2.min.css">
     <!-- END: Vendor CSS-->
@@ -53,16 +57,18 @@
 
 <!-- BEGIN: Body-->
 
-<body class="horizontal-layout horizontal-menu  navbar-floating footer-static  " data-open="hover" data-menu="horizontal-menu" data-col="">
+<body class="horizontal-layout horizontal-menu  navbar-floating footer-static  " data-open="hover"
+    data-menu="horizontal-menu" data-col="">
 
     <!-- BEGIN: Header-->
-    <nav class="header-navbar navbar-expand-lg navbar navbar-fixed align-items-center navbar-shadow navbar-brand-center">
+    <nav
+        class="header-navbar navbar-expand-lg navbar navbar-fixed align-items-center navbar-shadow navbar-brand-center">
         <div class="navbar-header d-xl-block d-none">
             <ul class="nav navbar-nav">
                 <li class="nav-item">
-                    <a class="navbar-brand" href="../../../html/ltr/horizontal-menu-template/index.html">
-                        {{-- <span class="brand-logo">
-                            <svg viewbox="0 0 139 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="24">
+                    <a class="navbar-brand" href="/">
+                        <span class="brand-logo">
+                            {{-- <svg viewbox="0 0 139 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="24">
                                 <defs>
                                     <lineargradient id="linearGradient-1" x1="100%" y1="10.5120544%" x2="50%" y2="89.4879456%">
                                         <stop stop-color="#000000" offset="0%"></stop>
@@ -84,9 +90,9 @@
                                         </g>
                                     </g>
                                 </g>
-                            </svg>
-                        </span> --}}
-                        <h2 class="brand-text mb-0">Presensi Ujian</h2>
+                            </svg> --}}
+                        </span>
+                        {{-- <h2 class="brand-text mb-0">Presensi Ujian</h2> --}}
                     </a>
                     {{-- <h2 class="brand-text mb-0">Sistem Presensi Ujian</h2> --}}
                 </li>
@@ -94,21 +100,32 @@
         </div>
         <div class="navbar-container d-flex content">
             <div class="bookmark-wrapper d-flex align-items-center">
-                {{-- <ul class="nav navbar-nav d-xl-none">
-                    <li class="nav-item"><a class="nav-link menu-toggle" href="#"><i class="ficon" data-feather="menu"></i></a></li>
-                </ul> --}}
+                <ul class="nav navbar-nav d-xl-none">
+                    <li class="nav-item"><a class="nav-link menu-toggle" href="#"><i class="ficon"
+                                data-feather="menu"></i></a></li>
+                </ul>
                 <ul class="nav navbar-nav bookmark-icons">
-                    <li class="nav-item d-none d-lg-block"><img src="../../../LOGO.png" height="50" alt=""></li>
+                    <li class="nav-item d-none d-lg-block"><img src="../../../LOGO.png" height="50"
+                            alt=""></li>
                 </ul>
             </div>
             <ul class="nav navbar-nav align-items-center ms-auto">
-                <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="user-nav d-sm-flex d-none"><span class="user-name fw-bolder">{{ Auth::user()->name }}</span><span class="user-status">Admin</span></div><span class="avatar"><img class="round" src="../../../logofeb.png" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
+                <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link"
+                        id="dropdown-user" href="#" data-bs-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        <div class="user-nav d-sm-flex d-none"><span
+                                class="user-name fw-bolder">{{ Auth::user()->name }}</span><span
+                                class="user-status">Admin</span></div><span class="avatar"><img class="round"
+                                src="{{ asset('storage/' . Auth::user()->foto) }}" alt="avatar" height="40" width="40"><span
+                                class="avatar-status-online"></span></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user">
+                        <a class="dropdown-item" href="/profile"><i class="me-50" data-feather="user"></i> Profile</a>
                         <form method="POST" action="/logout">
                             @csrf
-                            <a class="dropdown-item" href="/logout" onclick="event.preventDefault(); this.closest('form').submit();"><i class="me-50" data-feather="power"></i> Logout</a>
+                            <a class="dropdown-item" href="/logout"
+                                onclick="event.preventDefault(); this.closest('form').submit();"><i class="me-50"
+                                    data-feather="power"></i> Logout</a>
                         </form>
                     </div>
                 </li>
@@ -116,5 +133,3 @@
         </div>
     </nav>
     <!-- END: Header-->
-
-
