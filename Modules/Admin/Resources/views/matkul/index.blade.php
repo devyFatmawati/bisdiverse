@@ -42,7 +42,7 @@
                                                         <div class="mb-1">
                                                             <label class="form-label" for="first-name-column">Kode
                                                                 Matakuliah</label>
-                                                            <input type="number" id="first-name-column"
+                                                            <input type="text" id="first-name-column"
                                                                 class="form-control" placeholder="Kode" name="kode" />
                                                         </div>
                                                     </div>
