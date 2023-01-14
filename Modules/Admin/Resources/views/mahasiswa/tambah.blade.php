@@ -107,16 +107,24 @@
                                                     <label class="form-label" for="kelas">Kelas</label>
                                                     <select class="select2 w-100" name="kelas" id="kelas" required>
                                                         <option label="kelas"></option>
-                                                        <option >A</option>
-                                                        <option >B</option>
-                                                        <option >C</option>
-                                                        <option >D</option>
-                                                        <option >E</option>
-                                                        <option >F</option>
-                                                        <option >G</option>
-                                                        <option >H</option>
-                                                        <option >I</option>
-                                                        <option >J</option>
+                                                        @foreach ($kelass as $kelas)
+                                                    <option value="{{ $kelas->kelas }} {{ $kelas->tahun }}">{{ $kelas->kelas }} ({{ $kelas->tahun }})</option>
+                                                @endforeach
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-md-6 col-12">
+                                                <div class="mb-1">
+                                                    <label class="form-label" for="kelas">Kelas</label>
+                                                    <select class="select2 w-100" name="kelas_ujian" id="kelas" required>
+                                                        <option label="kelas"></option>
+                                                        <option>A</option>
+                                                        <option>B</option>
+                                                        <option>C</option>
+                                                        <option>D</option>
+                                                        <option>E</option>
+                                                        <option>F</option>
                                                     </select>
                                                 </div>
                                             </div>
