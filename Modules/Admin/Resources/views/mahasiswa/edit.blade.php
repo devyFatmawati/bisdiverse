@@ -81,7 +81,7 @@
                                                     <select class="select2 w-100" name="kelas" id="kelas" required>
                                                         @if (old('kelas', $mahasiswa->kelas) == $mahasiswa->kelas)
                                                             <option value="{{ $mahasiswa->kelas }}" selected>
-                                                                {{ $mahasiswa->kelas }}</option>
+                                                                {{ $mahasiswa->kelas }} ({{ $kelas->tahun }})</option>
                                                             @foreach ($kelass as $kelas)
                                                                 <option value="{{ $kelas->kelas }}">{{ $kelas->kelas }} ({{ $kelas->tahun }})</option>
                                                             @endforeach
