@@ -82,10 +82,13 @@
                                                         @if (old('kelas', $mahasiswa->kelas) == $mahasiswa->kelas)
                                                             <option value="{{ $mahasiswa->kelas }}" selected>
                                                                 {{ $mahasiswa->kelas }}</option>
+                                                            @foreach ($kelass as $kelas)
+                                                                <option value="{{ $kelas->kelas }}">{{ $kelas->kelas }} ({{ $kelas->tahun }})</option>
+                                                            @endforeach
                                                         @else
                                                             @foreach ($kelass as $kelas)
-                                                    <option value="{{ $kelas->kelas }}">{{ $kelas->kelas }} ({{ $kelas->tahun }})</option>
-                                                @endforeach
+                                                                <option value="{{ $kelas->kelas }}">{{ $kelas->kelas }} ({{ $kelas->tahun }})</option>
+                                                            @endforeach
                                                         @endif
                                                     </select>
                                                 </div>
@@ -93,7 +96,7 @@
                                             
                                             <div class="col-md-6 col-12">
                                                 <div class="mb-1">
-                                                    <label class="form-label" for="kelas_ujian">Kelas</label>
+                                                    <label class="form-label" for="kelas_ujian">Kelas Ujian</label>
                                                     <select class="select2 w-100" name="kelas_ujian" id="kelas_ujian" required>
                                                         @if (old('kelas_ujian', $mahasiswa->kelas_ujian) == $mahasiswa->kelas_ujian)
                                                             <option value="{{ $mahasiswa->kelas_ujian }}" selected>
