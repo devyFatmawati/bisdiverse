@@ -48,12 +48,13 @@
                                             <th style="text-align: center">Nama</th>
                                             <th style="text-align: center">NPM</th>
                                             <th style="text-align: center">Kelas</th>
+                                            <th style="text-align: center">Kelas Ujian</th>
                                             <th style="text-align: center">No KTP</th>
                                             <th style="text-align: center">Tempat / Tgl Lahir</th>
                                             <th style="text-align: center">Alamat</th>
                                             <th style="text-align: center">No Telp</th>
                                             <th style="text-align: center">Nama Ibu Kandung</th>
-                                            <th style="text-align: center"></th>
+                                            <th style="text-align: center">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -64,6 +65,7 @@
                                                 <td style="text-align: left">{{ $mahasiswa->nama }}</td>
                                                 <td style="text-align: center">{{ $mahasiswa->npm }}</td>
                                                 <td style="text-align: center">{{ $mahasiswa->kelas }}</td>
+                                                <td style="text-align: center">{{ $mahasiswa->kelas_ujian }}</td>
                                                 <td style="text-align: center">{{ $mahasiswa->no_ktp }}</td>
                                                 <td style="text-align: center">
                                                     {{ $mahasiswa->tempat_lahir }}/{{ $mahasiswa->tgl_lahir }}</td>
