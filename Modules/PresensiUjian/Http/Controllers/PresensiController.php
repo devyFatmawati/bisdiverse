@@ -28,7 +28,7 @@ class PresensiController extends Controller
             $cekrfid = Mahasiswa::select()->where('no_rfid', $rfid)->orWhere('no_rfid_cadangan', $rfid)->get();
             $mahasiswa = $cekrfid->first();
             if ($cekrfid->count() > 0) {
-                $cekpresensi = Presensi::select()->where('nama', $mahasiswa->nama)->where('npm', $mahasiswa->npm)->get();
+//                 $cekpresensi = Presensi::select()->where('nama', $mahasiswa->nama)->where('npm', $mahasiswa->npm)->get();
                 $date_now = Carbon::now()->format('Y-m-d');
                 $jam_now = Carbon::now()->format('H:i:s');
                 $jam_now_string = Carbon::now()->toDateTimeString();
@@ -41,7 +41,7 @@ class PresensiController extends Controller
                             $waktu_masuk = strtotime($masuk);
                             $waktu_berakhir = strtotime($jadwal_ujian->first()->jam_berakhir_ujian);
                             if ($waktu_sekarang >= $waktu_masuk && $waktu_sekarang <= $waktu_berakhir) {
-                                // $cekpresensi = Presensi::select()->where('no_rfid', $rfid)->where('matkul_id', $jadwal_ujian->first()->matkul_id)->get();
+                                $cekpresensi = Presensi::select()->->where('nama', $mahasiswa->nama)->where('npm', $mahasiswa->npm)->where('matkul_id', $jadwal_ujian->first()->matkul_id)->get();
                                 if ($cekpresensi->count() == 0) {
                                     // $mahasiswa = Mahasiswa::select()->where('id', $mahasiswa->mahasiswa_id)->get()->first();
                                     // return $mahasiswa;
