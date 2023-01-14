@@ -67,14 +67,15 @@
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 mb-1">
-                                                        <label class="form-label" for="kelas">Kelas</label>
+                                                        <label class="form-label" for="kelas">Kelas Ujian</label>
                                                         <select class="select2 form-select" id="kelas" name="kelas">
                                                             <option>Silahkan Pilih Kelas</option>
-                                                            @foreach ($kelass as $kelas)
-                                                                <option value="{{ $kelas->kelas }}">{{ $kelas->kelas }}
-                                                                    ({{ $kelas->tahun }})
-                                                                </option>
-                                                            @endforeach
+                                                            <option>A</option>
+                                                            <option>B</option>
+                                                            <option>C</option>
+                                                            <option>D</option>
+                                                            <option>E</option>
+                                                            <option>F</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 col-12">
