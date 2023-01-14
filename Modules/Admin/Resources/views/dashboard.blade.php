@@ -62,6 +62,7 @@
                                             <th style="text-align: center">Nama Matkul</th>
                                             <th style="text-align: center">Dosen Penguji</th>
                                             <th style="text-align: center">Kelas</th>
+                                            <th style="text-align: center">Kelas Ujian</th>
                                             <th style="text-align: center">Ruangan</th>
                                         </tr>
                                     </thead>
@@ -76,6 +77,7 @@
                                                 <td>{{ $jadwal->matkul->nama }}</td>
                                                 <td>{{ $jadwal->dosen->nama }}</td>
                                                 <td style="text-align: center">{{ $jadwal->kelas }}</td>
+                                                <td style="text-align: center">{{ $jadwal->kelas_ujian }}</td>
                                                 <td style="text-align: center">{{ $jadwal->ruangan }}</td>
                                             </tr>
                                         @endforeach
