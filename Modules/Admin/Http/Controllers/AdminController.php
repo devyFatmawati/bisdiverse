@@ -51,6 +51,7 @@ class AdminController extends Controller
             'jam_mulai_ujian' => 'required',
             'jam_berakhir_ujian' => 'required',
             'kelas' => 'required',
+            'kelas_ujian'=>'required',
             'dosen_kds' => 'required',
             'ruangan' => 'required',
         ]);
