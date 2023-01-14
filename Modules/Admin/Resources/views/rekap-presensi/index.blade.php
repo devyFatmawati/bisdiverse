@@ -151,6 +151,7 @@
                                                 <th style="text-align: center">Nama</th>
                                                 <th style="text-align: center">NPM</th>
                                                 <th style="text-align: center">Kelas</th>
+                                                <th style="text-align: center">Kelas Ujian</th>
                                                 <th style="text-align: center">Matkul</th>
                                                 {{-- <th>Dosen Penguji</th> --}}
                                                 <th style="text-align: center">Jam Absensi</th>
@@ -164,6 +165,7 @@
                                                     <td>{{ $presensi->nama }}</td>
                                                     <td style="text-align: center">{{ $presensi->npm }}</td>
                                                     <td style="text-align: center">{{ $presensi->kelas }}</td>
+                                                    <td style="text-align: center">{{ $presensi->kelas_ujian }}</td>
                                                     <td style="text-align: center">{{ $presensi->matkul->nama }}</td>
                                                     {{-- <td>{{ $presensi->dosen->nama }}</td> --}}
                                                     <td style="text-align: center">
