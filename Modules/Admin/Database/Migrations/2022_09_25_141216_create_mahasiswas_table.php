@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('konsentrasi')->nullable();
             $table->string('ipk')->nullable();
             $table->string('kelas')->nullable();
+            $table->string('kelas_ujian')->nullable();
             $table->text('no_ktp')->nullable();
             $table->string('alamat')->nullable();
             $table->string('provinsi')->nullable();
