@@ -142,6 +142,16 @@
                                             <select id="kelas_id" name="kelas" class="form-select"
                                                 aria-label="Default select example" required>
                                                 <option selected>Silahkan Pilih Kelas</option>
+                                                @foreach ($kelass as $kelas)
+                                                    <option value="{{ $kelas->id }}">{{ $kelas->kelas }} ({{ $kelas->tahun }})</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="col-12 col-md-6">
+                                            <label class="form-label" for="kelas_id">Kelas</label>
+                                            <select id="kelas_ujian" name="kelas" class="form-select"
+                                                aria-label="Default select example" required>
+                                                <option selected>Silahkan Pilih Kelas</option>
                                                 <option>A</option>
                                                 <option>B</option>
                                                 <option>C</option>
