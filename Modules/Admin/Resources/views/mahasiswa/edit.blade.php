@@ -82,28 +82,36 @@
                                                         @if (old('kelas', $mahasiswa->kelas) == $mahasiswa->kelas)
                                                             <option value="{{ $mahasiswa->kelas }}" selected>
                                                                 {{ $mahasiswa->kelas }}</option>
-                                                            <option>A</option>
-                                                            <option>B</option>
-                                                            <option>C</option>
-                                                            <option>D</option>
-                                                            <option>E</option>
-                                                            <option>F</option>
-                                                            <option>G</option>
-                                                            <option>H</option>
-                                                            <option>I</option>
-                                                            <option>J</option>
                                                         @else
-                                                            <option label="kelas"></option>
+                                                            @foreach ($kelass as $kelas)
+                                                    <option value="{{ $kelas->kelas }}">{{ $kelas->kelas }} ({{ $kelas->tahun }})</option>
+                                                @endforeach
+                                                        @endif
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-md-6 col-12">
+                                                <div class="mb-1">
+                                                    <label class="form-label" for="kelas_ujian">Kelas</label>
+                                                    <select class="select2 w-100" name="kelas_ujian" id="kelas_ujian" required>
+                                                        @if (old('kelas_ujian', $mahasiswa->kelas_ujian) == $mahasiswa->kelas_ujian)
+                                                            <option value="{{ $mahasiswa->kelas_ujian }}" selected>
+                                                                {{ $mahasiswa->kelas_ujian }}</option>
                                                             <option>A</option>
                                                             <option>B</option>
                                                             <option>C</option>
                                                             <option>D</option>
                                                             <option>E</option>
                                                             <option>F</option>
-                                                            <option>G</option>
-                                                            <option>H</option>
-                                                            <option>I</option>
-                                                            <option>J</option>
+                                                        @else
+                                                            <option label="kelas_ujian"></option>
+                                                            <option>A</option>
+                                                            <option>B</option>
+                                                            <option>C</option>
+                                                            <option>D</option>
+                                                            <option>E</option>
+                                                            <option>F</option>
                                                         @endif
                                                     </select>
                                                 </div>
