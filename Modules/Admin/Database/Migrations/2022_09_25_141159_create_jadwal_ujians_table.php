@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('matkul_kode');
             $table->string('dosen_kds');
             $table->string('kelas');
+            $table->string('kelas_ujian');
             $table->string('ruangan');
             $table->date('tgl_ujian');
             $table->time('jam_mulai_ujian');
