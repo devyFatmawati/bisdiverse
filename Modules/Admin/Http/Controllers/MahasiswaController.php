@@ -100,7 +100,7 @@ class MahasiswaController extends Controller
         return view('admin::mahasiswa.edit', [
             'kelass' => Kelas::all(),
             'mahasiswas' => Mahasiswa::all(),
-            'daftar' => Rfid::select()->where('id', $id)->get()->first(),
+//             'daftar' => Rfid::select()->where('id', $id)->get()->first(),
             'mahasiswa' => Mahasiswa::select()->where('id', $id)->get()->first(),
         ]);
     }
