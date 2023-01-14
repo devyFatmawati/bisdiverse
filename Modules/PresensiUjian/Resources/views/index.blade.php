@@ -91,12 +91,23 @@
                                         <div class="d-flex flex-row meetings">
                                             <div class="avatar bg-light-primary rounded me-1">
                                                 <div class="avatar-content">
+                                                    <i data-feather="user" class="avatar-icon font-medium-3"></i>
+                                                </div>
+                                            </div>
+                                            <div class="content-body">
+                                                <h6 class="mb-0">{{ $mahasiswa->nama }}</h6>
+                                                <small>{{ $mahasiswa->npm }}</small>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-row meetings">
+                                            <div class="avatar bg-light-primary rounded me-1">
+                                                <div class="avatar-content">
                                                     <i data-feather="calendar" class="avatar-icon font-medium-3"></i>
                                                 </div>
                                             </div>
                                             <div class="content-body">
                                                 <h6 class="mb-0">Kelas {{ $mahasiswa->kelas }}</h6>
-                                                <small>Angkatan {{ $mahasiswa->angkatan }}</small>
+                                                <small>Angkatan {{ $mahasiswa->tahun_masuk }}</small>
                                             </div>
                                         </div>
                                         <div class="d-flex flex-row meetings">
