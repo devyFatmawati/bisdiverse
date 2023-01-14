@@ -41,7 +41,7 @@ class PresensiController extends Controller
                             $waktu_masuk = strtotime($masuk);
                             $waktu_berakhir = strtotime($jadwal_ujian->first()->jam_berakhir_ujian);
                             if ($waktu_sekarang >= $waktu_masuk && $waktu_sekarang <= $waktu_berakhir) {
-                                $cekpresensi = Presensi::select()->->where('nama', $mahasiswa->nama)->where('npm', $mahasiswa->npm)->where('matkul_id', $jadwal_ujian->first()->matkul_id)->get();
+                                $cekpresensi = Presensi::select()->where('nama', $mahasiswa->nama)->where('npm', $mahasiswa->npm)->where('matkul_id', $jadwal_ujian->first()->matkul_id)->get();
                                 if ($cekpresensi->count() == 0) {
                                     // $mahasiswa = Mahasiswa::select()->where('id', $mahasiswa->mahasiswa_id)->get()->first();
                                     // return $mahasiswa;
