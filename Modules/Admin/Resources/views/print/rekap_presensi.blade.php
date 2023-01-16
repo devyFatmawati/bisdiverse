@@ -86,7 +86,7 @@
                         </div>
                         <div>
                             <div class="d-flex">
-                                <img src="../../../favicon.png" height="100" alt="">
+                                <img src="../../../LOGO_BD_Hitam.png" height="100" alt="">
                             </div>
                         </div>
                         <div class="mt-md-0">
