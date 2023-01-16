@@ -25,7 +25,7 @@ class RekapPresensiController extends Controller
         return view('admin::rekap-presensi.index', [
             'kelass' => Kelas::all(),
             'matkuls' => Matkul::all(),
-            'presensis' => $rekap,
+            'presensis' => $rekap->sortDesc('npm'),
         ]);
     }
 
