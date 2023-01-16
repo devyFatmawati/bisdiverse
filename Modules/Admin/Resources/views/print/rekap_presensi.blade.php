@@ -174,18 +174,29 @@
 
                     <hr class="my-2" />
                     <div class="row">
-                        <div class="table-responsive mt-2">
-                            <table class="table">
-                                <tbody>
-                                    <tr>
-                                        <th>Kepala Program Studi Bisnis Digital</th>
-                                        <th></th>
-                                        <th>
-                                            Bogor, {{ Carbon\Carbon::now()->format('d-m-Y') }}
-                                        </th>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="col-sm-6 ml-0">
+                            <div class="table-responsive mt-2">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>
+                                                <p>Bogor, {{ Carbon\Carbon::now()->format('d-m-Y') }}</p>
+                                                <p>Ketua Program Studi Bisnis Digital</p>
+                                                <br>
+                                                <br>
+                                                <br>
+                                                <p>Dion Achmad Armadi, S.E., M.Si.</p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
