@@ -19,13 +19,13 @@ class RekapPresensiController extends Controller
     {
         $rekap = null;
         if (Request('matkul') && Request('kelas') && Request('tanggal')) {
-            $rekap = Presensi::select()->where('matkul_kode', Request('matkul'))->where('kelas_ujian', Request('kelas'))->wheredate('created_at', Request('tanggal'))->get();
+            $rekap = Presensi::select()->where('matkul_kode', Request('matkul'))->where('kelas_ujian', Request('kelas'))->wheredate('created_at', Request('tanggal'))->orderBy('npm','asc')->get();
         }
         // return $rekap;
         return view('admin::rekap-presensi.index', [
             'kelass' => Kelas::all(),
             'matkuls' => Matkul::all(),
-            'presensis' => $rekap->sortDesc('npm'),
+            'presensis' => $rekap,
         ]);
     }
 
