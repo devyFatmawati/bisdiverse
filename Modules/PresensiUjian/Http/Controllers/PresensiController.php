@@ -32,16 +32,17 @@ class PresensiController extends Controller
                 $date_now = Carbon::now()->format('Y-m-d');
                 $jam_now = Carbon::now()->format('H:i:s');
                 $jam_now_string = Carbon::now()->toDateTimeString();
-                $jadwal_ujian = JadwalUjian::select()->wheredate('tgl_ujian', $date_now)->wheretime('jam_mulai_ujian', '<=', $jam_now)->wheretime('jam_berakhir_ujian', '>=', $jam_now)->where('kelas', $mahasiswa->kelas.' '.$mahasiswa->tahun_masuk)->get();
+                $jadwal_ujian = JadwalUjian::select()->wheredate('tgl_ujian', $date_now)->wheretime('jam_mulai_ujian', '<=', $jam_now)->wheretime('jam_berakhir_ujian', '>=', $jam_now)->where('kelas', $mahasiswa->kelas.' '.$mahasiswa->tahun_masuk)->where('kelas_ujian',$mahasiswa->kelas_ujian)->get();
                 if ($jadwal_ujian) {
                     if ($jadwal_ujian->first()) {
                         $masuk = $jadwal_ujian->first()->jam_mulai_ujian;
+                        $tgl_ujian=Carbon::parse($jadwal_ujian->first()->tgl_ujian);
                         if ($masuk) {
                             $waktu_sekarang = strtotime($jam_now);
                             $waktu_masuk = strtotime($masuk);
                             $waktu_berakhir = strtotime($jadwal_ujian->first()->jam_berakhir_ujian);
                             if ($waktu_sekarang >= $waktu_masuk && $waktu_sekarang <= $waktu_berakhir) {
-                                $cekpresensi = Presensi::select()->where('nama', $mahasiswa->nama)->where('npm', $mahasiswa->npm)->where('matkul_kode', $jadwal_ujian->first()->matkul_kode)->get();
+                                $cekpresensi = Presensi::select()->where('nama', $mahasiswa->nama)->where('npm', $mahasiswa->npm)->where('matkul_kode', $jadwal_ujian->first()->matkul_kode)->wheredate('created_at',$tgl_ujian)->get();
                                 if ($cekpresensi->count() == 0) {
                                     // $mahasiswa = Mahasiswa::select()->where('id', $mahasiswa->mahasiswa_id)->get()->first();
                                     // return $mahasiswa;
