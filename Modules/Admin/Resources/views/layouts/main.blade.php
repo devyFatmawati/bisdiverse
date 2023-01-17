@@ -68,6 +68,7 @@
         }
     })
 </script>
+@include('layouts.cs')
 </body>
 <!-- END: Body-->
 
