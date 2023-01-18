@@ -28,6 +28,7 @@ use Modules\Admin\Http\Controllers\UserMahasiswaController;
 Route::prefix('admin')->middleware(['auth:sanctum','verified', 'role:0', 'divisi:0', 'jabatan:0'])->group(function() {
     Route::resource('/', AdminController::class);
     Route::resource('/jadwal', AdminController::class);
+    Route::view('/lihat', 'admin::lihat');
     Route::resource('/dosen', DosenController::class);
     Route::resource('/mahasiswa', MahasiswaController::class);
     Route::resource('/kelas', KelasController::class);
