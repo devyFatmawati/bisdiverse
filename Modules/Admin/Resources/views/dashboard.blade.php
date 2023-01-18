@@ -89,7 +89,7 @@
                                                                     data-feather="more-vertical"></i>Action</span>
                                                         </button>
                                                         <div class="dropdown-menu dropdown-menu-end">
-                                                            <form action="/admin/{{ $jadwal->id }}"
+                                                            <form action="/admin/jadwal/{{ $jadwal->id }}"
                                                                 method="post" class="d-inline">
                                                                 @method('delete')
                                                                 @csrf
