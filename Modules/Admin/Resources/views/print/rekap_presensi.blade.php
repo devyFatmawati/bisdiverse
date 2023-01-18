@@ -142,8 +142,8 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th class="py-1" style="text-align: center">No</th>
-                                    <th class="py-1" style="text-align: center">NPM</th>
+                                    <th class="py-1" width="5%" style="text-align: center">No</th>
+                                    <th class="py-1" width="30%" style="text-align: center">NPM</th>
                                     <th class="py-1">Nama</th>
                                     <th class="py-1" style="text-align: center">Tgl</th>
                                     <th class="py-1" style="text-align: center">Waktu</th>
