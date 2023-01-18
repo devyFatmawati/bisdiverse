@@ -100,6 +100,7 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        JadwalUjian::destroy('id', $id);
+        return redirect()->back()->with('success', 'Data berhasil di Hapus');
     }
 }
