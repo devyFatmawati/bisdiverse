@@ -147,7 +147,6 @@
                                     <th class="py-1">Nama</th>
                                     <th class="py-1" style="text-align: center">Tgl</th>
                                     <th class="py-1" style="text-align: center">Waktu</th>
-                                    <th class="py-1" style="text-align: center">Ket</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -158,7 +157,6 @@
                                         <td>{{ $presensi->nama }}</td>
                                         <td style="text-align: center">{{ $presensi->created_at->format('d-m-Y') }}</td>
                                         <td style="text-align: center">{{ $presensi->created_at->format('H:i') }}</td>
-                                        <td></td>
                                     </tr>
                                 @endforeach
                             </tbody>
