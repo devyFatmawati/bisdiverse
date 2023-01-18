@@ -64,6 +64,7 @@
                                             <th style="text-align: center">Kelas</th>
                                             <th style="text-align: center">Kelas Ujian</th>
                                             <th style="text-align: center">Ruangan</th>
+                                            <th style="text-align: center">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -79,6 +80,28 @@
                                                 <td style="text-align: center">{{ $jadwal->kelas }}</td>
                                                 <td style="text-align: center">{{ $jadwal->kelas_ujian }}</td>
                                                 <td style="text-align: center">{{ $jadwal->ruangan }}</td>
+                                                <td style="text-align: center">
+                                                    <div class="dropdown">
+                                                        <button type="button"
+                                                            class="btn btn-sm dropdown-toggle hide-arrow py-0"
+                                                            data-bs-toggle="dropdown">
+                                                            <span class="badge rounded-pill badge-light-primary me-1"><i
+                                                                    data-feather="more-vertical"></i>Action</span>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-end">
+                                                            <form action="/admin/{{ $jadwal->id }}"
+                                                                method="post" class="d-inline">
+                                                                @method('delete')
+                                                                @csrf
+                                                                <a class="dropdown-item" href="#"
+                                                                    onclick="event.preventDefault(); this.closest('form').submit();">
+                                                                    <i data-feather="trash" class="me-50"></i>
+                                                                    <span>Delete</span>
+                                                                </a>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </td>
                                             </tr>
                                         @endforeach
                                     </tbody>
