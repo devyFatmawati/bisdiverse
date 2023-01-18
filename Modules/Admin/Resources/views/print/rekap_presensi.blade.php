@@ -142,10 +142,10 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th class="py-1" width="2%" style="text-align: center">No</th>
-                                    <th class="py-1" width="18%" style="text-align: center">NPM</th>
+                                    <th width="1%" style="text-align: center">No</th>
+                                    <th class="py-1" width="9%" style="text-align: center">NPM</th>
                                     <th class="py-1" width="30%">Nama</th>
-                                    <th class="py-1" width="15%" style="text-align: center">Tgl</th>
+                                    <th class="py-1" width="25%" style="text-align: center">Tgl</th>
                                     <th class="py-1" width="15%" style="text-align: center">Waktu</th>
                                     <th class="py-1" width="20%" style="text-align: center">Ket</th>
                                 </tr>
