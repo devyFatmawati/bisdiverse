@@ -1,7 +1,5 @@
     <!-- BEGIN: Customizer-->
-    <div class="customizer d-none d-md-block"><a
-            class="customizer-toggle d-flex align-items-center justify-content-center" href="#"><i
-                class="spinner" data-feather="settings"></i></a>
+    <div class="customizer d-none d-md-block"><a class="customizer-toggle d-flex align-items-center justify-content-center" href="#"><i class="spinner" data-feather="settings"></i></a>
         <div class="customizer-content">
             <!-- Customizer header -->
             <div class="customizer-header px-2 pt-1 pb-0 position-relative">
@@ -18,23 +16,19 @@
                 <p class="fw-bold">Skin</p>
                 <div class="d-flex">
                     <div class="form-check me-1">
-                        <input type="radio" id="skinlight" name="skinradio"
-                            class="form-check-input layout-name" checked data-layout="" />
+                        <input type="radio" id="skinlight" name="skinradio" class="form-check-input layout-name" checked data-layout="" />
                         <label class="form-check-label" for="skinlight">Light</label>
                     </div>
                     <div class="form-check me-1">
-                        <input type="radio" id="skinbordered" name="skinradio"
-                            class="form-check-input layout-name" data-layout="bordered-layout" />
+                        <input type="radio" id="skinbordered" name="skinradio" class="form-check-input layout-name" data-layout="bordered-layout" />
                         <label class="form-check-label" for="skinbordered">Bordered</label>
                     </div>
                     <div class="form-check me-1">
-                        <input type="radio" id="skindark" name="skinradio"
-                            class="form-check-input layout-name" data-layout="dark-layout" />
+                        <input type="radio" id="skindark" name="skinradio" class="form-check-input layout-name" data-layout="dark-layout" />
                         <label class="form-check-label" for="skindark">Dark</label>
                     </div>
                     <div class="form-check">
-                        <input type="radio" id="skinsemidark" name="skinradio"
-                            class="form-check-input layout-name" data-layout="semi-dark-layout" />
+                        <input type="radio" id="skinsemidark" name="skinradio" class="form-check-input layout-name" data-layout="semi-dark-layout" />
                         <label class="form-check-label" for="skinsemidark">Semi Dark</label>
                     </div>
                 </div>
@@ -59,13 +53,11 @@
                 <p class="fw-bold">Layout Width</p>
                 <div class="d-flex">
                     <div class="form-check me-1">
-                        <input type="radio" id="layout-width-full" name="layoutWidth" class="form-check-input"
-                            checked />
+                        <input type="radio" id="layout-width-full" name="layoutWidth" class="form-check-input" checked />
                         <label class="form-check-label" for="layout-width-full">Full Width</label>
                     </div>
                     <div class="form-check me-1">
-                        <input type="radio" id="layout-width-boxed" name="layoutWidth"
-                            class="form-check-input" />
+                        <input type="radio" id="layout-width-boxed" name="layoutWidth" class="form-check-input" />
                         <label class="form-check-label" for="layout-width-boxed">Boxed</label>
                     </div>
                 </div>
@@ -91,8 +83,7 @@
                 <p class="navbar-type-text fw-bold">Navbar Type</p>
                 <div class="d-flex">
                     <div class="form-check me-1">
-                        <input type="radio" id="nav-type-floating" name="navType" class="form-check-input"
-                            checked />
+                        <input type="radio" id="nav-type-floating" name="navType" class="form-check-input" checked />
                         <label class="form-check-label" for="nav-type-floating">Floating</label>
                     </div>
                     <div class="form-check me-1">
@@ -116,18 +107,15 @@
                 <p class="fw-bold">Footer Type</p>
                 <div class="d-flex">
                     <div class="form-check me-1">
-                        <input type="radio" id="footer-type-sticky" name="footerType"
-                            class="form-check-input" />
+                        <input type="radio" id="footer-type-sticky" name="footerType" class="form-check-input" />
                         <label class="form-check-label" for="footer-type-sticky">Sticky</label>
                     </div>
                     <div class="form-check me-1">
-                        <input type="radio" id="footer-type-static" name="footerType" class="form-check-input"
-                            checked />
+                        <input type="radio" id="footer-type-static" name="footerType" class="form-check-input" checked />
                         <label class="form-check-label" for="footer-type-static">Static</label>
                     </div>
                     <div class="form-check me-1">
-                        <input type="radio" id="footer-type-hidden" name="footerType"
-                            class="form-check-input" />
+                        <input type="radio" id="footer-type-hidden" name="footerType" class="form-check-input" />
                         <label class="form-check-label" for="footer-type-hidden">Hidden</label>
                     </div>
                 </div>
@@ -143,14 +131,20 @@
     <!-- BEGIN: Footer-->
     <footer class="footer footer-static footer-light">
         <p class="clearfix mb-0"><span class="float-md-start d-block d-md-inline-block mt-25">COPYRIGHT &copy;
-                2022<a class="ms-25" href="/"
-                    target="_blank">Bisnis Digital</a><span class="d-none d-sm-inline-block">, All rights
-                    Reserved</span></span><span class="float-md-end d-none d-md-block">Hand-crafted & Made with<i
-                    data-feather="heart"></i></span></p>
+                2022<a class="ms-25" href="/" target="_blank">Bisnis Digital</a><span class="d-none d-sm-inline-block">, All rights
+                    Reserved</span></span><span class="float-md-end d-none d-md-block">Hand-crafted & Made with<i data-feather="heart"></i></span></p>
     </footer>
     <button class="btn btn-primary btn-icon scroll-top" type="button"><i data-feather="arrow-up"></i></button>
     <!-- END: Footer-->
 
+    <script src="{{ asset('/sw.js') }}"></script>
+    <script>
+        if (!navigator.serviceWorker.controller) {
+            navigator.serviceWorker.register("/sw.js").then(function(reg) {
+                console.log("Service worker has been registered for scope: " + reg.scope);
+            });
+        }
+    </script>
 
     <!-- BEGIN: Vendor JS-->
     <script src="../../../app-assets/vendors/js/vendors.min.js"></script>
@@ -168,7 +162,7 @@
 
     <!-- BEGIN: Page JS-->
     <script src="../../../app-assets/js/scripts/pages/page-knowledge-base.min.js"></script>
-     <script src="../../../app-assets/js/scripts/forms/form-tooltip-valid.min.js"></script>
+    <script src="../../../app-assets/js/scripts/forms/form-tooltip-valid.min.js"></script>
     <!-- END: Page JS-->
 
     <script>
@@ -182,7 +176,7 @@
         })
     </script>
     @include('layouts.cs')
-</body>
-<!-- END: Body-->
+    </body>
+    <!-- END: Body-->
 
-</html>
+    </html>

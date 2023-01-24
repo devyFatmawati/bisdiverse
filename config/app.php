@@ -195,6 +195,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        Ladumor\LaravelPwa\PWAServiceProvider::class,
+
     ],
 
     /*
@@ -211,6 +213,7 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'LaravelPwa' => \Ladumor\LaravelPwa\LaravelPwa::class,
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 

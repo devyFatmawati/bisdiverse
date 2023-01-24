@@ -6,16 +6,18 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
-    <meta name="description"
-        content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
-    <meta name="keywords"
-        content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
     <title>Bisdiverse</title>
     <link rel="apple-touch-icon" href="../../../favicon.png">
     <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
+
+    <!-- PWA  -->
+    <meta name="theme-color" content="#7367F0" />
+    <link rel="apple-touch-icon" href="../../../favicon.png">
+    <link rel="manifest" href="{{ asset('/manifest.json') }}">
 
     <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/vendors.min.css">
@@ -47,12 +49,10 @@
 
 <!-- BEGIN: Body-->
 
-<body class="horizontal-layout horizontal-menu  navbar-floating footer-static  " data-open="hover"
-    data-menu="horizontal-menu" data-col="">
+<body class="horizontal-layout horizontal-menu  navbar-floating footer-static  " data-open="hover" data-menu="horizontal-menu" data-col="">
 
     <!-- BEGIN: Header-->
-    <nav
-        class="header-navbar navbar-expand-lg navbar navbar-fixed align-items-center navbar-shadow navbar-brand-center">
+    <nav class="header-navbar navbar-expand-lg navbar navbar-fixed align-items-center navbar-shadow navbar-brand-center">
         <div class="navbar-header d-xl-block d-none">
             <ul class="nav navbar-nav">
                 <li class="nav-item">
@@ -100,45 +100,33 @@
             </div>
 
             @if (Auth::user())
-                <ul class="nav navbar-nav align-items-center ms-auto">
-                    <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link"
-                            id="dropdown-user" href="#" data-bs-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            <div class="user-nav d-sm-flex d-none"><span
-                                    class="user-name fw-bolder">{{ Auth::user()->name }}</span><span
-                                    class="user-status">Belum Memiliki Role User</span></div><span class="avatar"><img
-                                    class="round" src="{{ asset('storage/' . Auth::user()->foto) }}" alt="avatar" height="40"
-                                    width="40"><span class="avatar-status-online"></span></span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user">
-                            <form method="POST" action="logout">
-                                @csrf
-                                <a class="dropdown-item" href="logout"
-                                    onclick="event.preventDefault(); this.closest('form').submit();"><i class="me-50"
-                                        data-feather="power"></i> Logout</a>
-                            </form>
-                        </div>
-                    </li>
-                </ul>
+            <ul class="nav navbar-nav align-items-center ms-auto">
+                <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="user-nav d-sm-flex d-none"><span class="user-name fw-bolder">{{ Auth::user()->name }}</span><span class="user-status">Belum Memiliki Role User</span></div><span class="avatar"><img class="round" src="{{ asset('storage/' . Auth::user()->foto) }}" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user">
+                        <form method="POST" action="logout">
+                            @csrf
+                            <a class="dropdown-item" href="logout" onclick="event.preventDefault(); this.closest('form').submit();"><i class="me-50" data-feather="power"></i> Logout</a>
+                        </form>
+                    </div>
+                </li>
+            </ul>
             @else
-                <ul class="nav navbar-nav align-items-center ms-auto">
-                    <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link"
-                            id="dropdown-user" href="#" data-bs-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            <div class="user-nav d-sm-flex d-none"><span class="user-name fw-bolder">Login</span><span
-                                    class="user-status">{{ carbon\Carbon::now()->isoformat('dddd, D MMMM Y') }}</span>
-                            </div>
-                            <span class="avatar"><img class="round" src="../../../login.png" alt="avatar"
-                                    height="40" width="40">
-                                <span class="avatar-status-online"></span>
-                            </span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user">
-                            <a class="dropdown-item" href="/login"><i class="me-50" data-feather="log-in"></i>
-                                Login</a>
+            <ul class="nav navbar-nav align-items-center ms-auto">
+                <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="user-nav d-sm-flex d-none"><span class="user-name fw-bolder">Login</span><span class="user-status">{{ carbon\Carbon::now()->isoformat('dddd, D MMMM Y') }}</span>
                         </div>
-                    </li>
-                </ul>
+                        <span class="avatar"><img class="round" src="../../../login.png" alt="avatar" height="40" width="40">
+                            <span class="avatar-status-online"></span>
+                        </span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user">
+                        <a class="dropdown-item" href="/login"><i class="me-50" data-feather="log-in"></i>
+                            Login</a>
+                    </div>
+                </li>
+            </ul>
             @endif
         </div>
     </nav>
