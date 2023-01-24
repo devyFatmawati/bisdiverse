@@ -20,7 +20,7 @@ class MagangController extends Controller
     public function index()
     {
         $user_id=Auth::user()->id;
-        $mahasiswa=Mahasiswa::where('user_id',$user_id)->get()->first();
+        $mahasiswa=Mahasiswa::where('id',$user_id)->get()->first();
         $magang= Magang::select()->where('mahasiswa_npm', $mahasiswa->npm)->latest()->first();
         if($magang==null){
             $history=null;

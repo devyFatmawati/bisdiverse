@@ -107,10 +107,12 @@
                                             </a>
                                         </div>
                                     @endif
+                                    @if (Module::collections()->has('Magang'))
                                     <div class="col-md-6 mt-2">
-                                        <a href="/pengajuan" class="btn btn-primary btn-block form-control">Seminar
+                                        <a href="/seminar" class="btn btn-primary btn-block form-control">Seminar
                                         </a>
                                     </div>
+                                    @endif
                                     <div class="col-md-6 mt-2">
                                         <a href="/pengajuan" class="btn btn-primary btn-block form-control">Proposal
                                         </a>

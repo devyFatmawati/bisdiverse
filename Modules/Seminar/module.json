@@ -1,0 +1,11 @@
+{
+    "name": "Seminar",
+    "alias": "seminar",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Seminar\\Providers\\SeminarServiceProvider"
+    ],
+    "files": []
+}
