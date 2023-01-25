@@ -5,5 +5,7 @@
     "Mahasiswa": true,
     "Dosen": true,
     "Kaprodi": true,
-    "Seminar": true
+    "Seminar": true,
+    "Controller": true,
+    "PengajuanSeminar": true
 }

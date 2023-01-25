@@ -107,7 +107,7 @@
                                             </a>
                                         </div>
                                     @endif
-                                    @if (Module::collections()->has('Magang'))
+                                    @if (Module::collections()->has('Seminar'))
                                     <div class="col-md-6 mt-2">
                                         <a href="/seminar" class="btn btn-primary btn-block form-control">Seminar
                                         </a>

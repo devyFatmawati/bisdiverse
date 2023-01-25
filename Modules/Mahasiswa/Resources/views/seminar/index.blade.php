@@ -65,7 +65,7 @@
                                     <div class="d-flex flex-row meetings">
                                         <div class="avatar bg-light-primary rounded me-1">
                                             <div class="avatar-content">
-                                                <i data-feather="user" class="avatar-icon font-medium-3"></i>
+                                                <i data-feather="users" class="avatar-icon font-medium-3"></i>
                                             </div>
                                         </div>
                                         <div class="content-body">
