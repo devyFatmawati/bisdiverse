@@ -45,12 +45,12 @@ class VerifikasiPengajuanSeminarController extends Controller
         ]);
 
         HistoryPengajuanSeminar::create([
-            'seminar_id' => $id,
+            'Seminar_id' => $id,
             'status' => $request->status,
             'jabatan' => $request->jabatan,
             'catatan' => $request->catatan,
         ]);
-        return redirect('/seminar/pengajuan')->with('success', 'Pengajuan Seminar Telah' . $request->status);
+        return redirect('/seminar/pengajuan')->with('success', 'Pengajuan Seminar Telah ' . $request->status);
     }
 
     /**
