@@ -45,7 +45,7 @@
                                         </div>
                                         <div class="my-auto">
                                             <h4 class="card-title mb-25">{{ $seminar->mahasiswa->nama }}</h4>
-                                            <p class="card-text mb-0">Konsentrasi : {{ $seminar->konsentrasi }}</p>
+                                            <p class="card-text mb-0">Konsentrasi : {{ $seminar->konsentrasi }} </p>
                                         </div>
                                     </div>
                                     <div class="d-flex flex-row meetings">

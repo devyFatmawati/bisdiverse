@@ -21,8 +21,6 @@ Route::prefix('seminar')->middleware(['auth:sanctum', 'verified', 'role:0', 'jab
 
 // role kaprodi
 Route::prefix('seminar')->middleware(['auth:sanctum', 'verified', 'role:1', 'jabatan:1'])->group(function () {
-    // Route::resource('/', seminarController::class);
-    // Route::resource('/pembimbing', PembimbingseminarController::class);
     Route::resource('/pengajuan-seminar', SetujuiPengajuanSeminarController::class);
 });
 
