@@ -1,4 +1,4 @@
-@extends('admin::layouts.main')
+@extends('kaprodi::layouts.main')
 
 @section('content')
     <!-- BEGIN: Content-->
@@ -381,7 +381,7 @@
                     </h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="/seminar/pengajuan" method='POST'>
+                <form action="/seminar/pengajuan-seminar" method='POST'>
                     @csrf
                     <div class="modal-body">
                         <label>Catatan : </label>
@@ -411,7 +411,7 @@
                     </h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="/seminar/pengajuan" method='POST'>
+                <form action="/seminar/pengajuan-seminar" method='POST'>
                     @csrf
                     <div class="modal-body">
                         <label>Catatan : </label>

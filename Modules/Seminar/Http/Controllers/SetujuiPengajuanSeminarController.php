@@ -9,7 +9,7 @@ use Modules\Admin\Entities\Mahasiswa;
 use Modules\Seminar\Entities\HistoryPengajuanSeminar;
 use Modules\Seminar\Entities\Seminar;
 
-class VerifikasiPengajuanSeminarController extends Controller
+class SetujuiPengajuanSeminarController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +17,8 @@ class VerifikasiPengajuanSeminarController extends Controller
      */
     public function index()
     {
-        return view('admin::pengajuan_seminar.index', [
-            'mahasiswas' => Seminar::select()->whereIn('status', ['Diajukan Mahasiswa', 'Ditinjau TU'])->get(),
+        return view('kaprodi::seminar.pengajuan', [
+            'mahasiswas' => Seminar::select()->whereIn('status', ['Diverifikasi TU', 'Ditinjau Kaprodi', 'Disetujui Kaprodi'])->get(),
         ]);
     }
 
@@ -38,19 +38,18 @@ class VerifikasiPengajuanSeminarController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request;
         $id = $request->seminar_id;
         Seminar::where('id', $id)->update([
-            'status' => $request->status.' '.'TU',
+            'status' => $request->status . ' ' . 'Kaprodi',
         ]);
 
         HistoryPengajuanSeminar::create([
-            'seminar_id' => $id,
+            'Seminar_id' => $id,
             'status' => $request->status,
             'jabatan' => $request->jabatan,
             'catatan' => $request->catatan,
         ]);
-        return redirect('/seminar/pengajuan')->with('success', 'Pengajuan Seminar Telah ' . $request->status);
+        return redirect('/seminar/pengajuan-seminar')->with('success', 'Pengajuan seminar Telah' . $request->status);
     }
 
     /**
@@ -63,19 +62,23 @@ class VerifikasiPengajuanSeminarController extends Controller
         $seminar = Seminar::where('id', $id)->get()->first();
         $mahasiswa = Mahasiswa::select()->where('npm', $seminar->mahasiswa_npm)->get()->first();
 
-        seminar::where('id', $id)->update([
-            'status' => 'Ditinjau TU',
-        ]);
+        $cekstatus = Seminar::select()->where('id', $id)->where('status', 'Disetujui Kaprodi')->get();
+        if (isset($cekstatus)) {
+        } else {
+            Seminar::where('id', $id)->update([
+                'status' => 'Ditinjau Kaprodi',
+            ]);
+        }
 
-        $cekhistory = HistoryPengajuanSeminar::select()->where('seminar_id', $id)->where('status', 'Ditinjau')->where('Jabatan', 'TU')->get();
+        $cekhistory = HistoryPengajuanSeminar::select()->where('seminar_id', $id)->where('status', 'Ditinjau')->where('Jabatan', 'Kaprodi')->get();
         if ($cekhistory->count() == 0) {
             HistoryPengajuanSeminar::create([
                 'seminar_id' => $id,
                 'status' => 'Ditinjau',
-                'jabatan' => 'TU',
+                'jabatan' => 'Kaprodi',
             ]);
         }
-        return view('admin::pengajuan_seminar.lihat', [
+        return view('kaprodi::seminar.lihat', [
             'seminar' => $seminar,
             'mahasiswa' => $mahasiswa,
             'historys' => HistoryPengajuanSeminar::select()->where('seminar_id', $seminar->id)->get(),

@@ -12,17 +12,19 @@
 */
 
 use Modules\Seminar\Http\Controllers\SeminarController;
+use Modules\Seminar\Http\Controllers\SetujuiPengajuanSeminarController;
 use Modules\Seminar\Http\Controllers\VerifikasiPengajuanSeminarController;
 
 Route::prefix('seminar')->middleware(['auth:sanctum', 'verified', 'role:0', 'jabatan:0'])->group(function () {
     Route::resource('/pengajuan', VerifikasiPengajuanSeminarController::class);
 });
-// // role kaprodi
-// Route::prefix('seminar')->middleware(['auth:sanctum', 'verified', 'role:1', 'jabatan:1'])->group(function () {
-//     // Route::resource('/', seminarController::class);
-//     // Route::resource('/pembimbing', PembimbingseminarController::class);
-//     Route::resource('/pengajuan-seminar', SetujuiseminarController::class);
-// });
+
+// role kaprodi
+Route::prefix('seminar')->middleware(['auth:sanctum', 'verified', 'role:1', 'jabatan:1'])->group(function () {
+    // Route::resource('/', seminarController::class);
+    // Route::resource('/pembimbing', PembimbingseminarController::class);
+    Route::resource('/pengajuan-seminar', SetujuiPengajuanSeminarController::class);
+});
 
 // role mahasiswa
 Route::prefix('seminar')->middleware(['auth:sanctum', 'verified', 'role:1', 'jabatan:3'])->group(function () {
