@@ -18,7 +18,7 @@ class SetujuiMagangController extends Controller
     public function index()
     {
         return view('kaprodi::magang.pengajuan', [
-            'mahasiswas' => Magang::select()->whereIn('status', ['Diverifikasi TU', 'Ditinjau Kaprodi', 'Disetujui Kaprodi'])->get(),
+            'mahasiswas' => Magang::select()->whereIn('status', ['Diverifikasi TU', 'Ditinjau Kaprodi'])->get(),
         ]);
     }
 
