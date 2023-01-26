@@ -1,0 +1,11 @@
+{
+    "name": "Judulskripsi",
+    "alias": "judulskripsi",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Judulskripsi\\Providers\\JudulskripsiServiceProvider"
+    ],
+    "files": []
+}

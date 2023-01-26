@@ -43,6 +43,13 @@
                                         data-i18n="Leaflet Maps">Seminar</span></a>
                             </li>
                         @endif
+                        @if (Module::collections()->has('Judulskripsi'))
+                            <li class="{{ Request::is('judulskripsi*') ? 'active' : 'nav-item' }}"data-menu=""><a
+                                    class="dropdown-item d-flex align-items-center" href="/judulskripsi" data-bs-toggle=""
+                                    data-i18n="Leaflet Maps"><i data-feather="circle"></i><span
+                                        data-i18n="Leaflet Maps">Judul Skripsi</span></a>
+                            </li>
+                        @endif
                     </ul>
                 </li>
             </ul>

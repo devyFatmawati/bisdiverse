@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
-    <title>Pengajuan Seminar</title>
+    <title>Pengajuan Judul Skripsi</title>
     <link rel="apple-touch-icon" href="../../../favicon.png">
     <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
@@ -86,7 +86,7 @@
                                 </g>
                             </svg>
                         </span> --}}
-                        <h2 class="brand-text mb-0">Seminar</h2>
+                        <h2 class="brand-text mb-0">Judul Skripsi</h2>
                     </a>
                     {{-- <h2 class="brand-text mb-0">Sistem Presensi Ujian</h2> --}}
                 </li>
