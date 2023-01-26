@@ -73,11 +73,11 @@
                             data-bs-toggle="dropdown"><i data-feather="airplay"></i><span
                                 data-i18n="Charts &amp; Maps">Seminar</span></a>
                         <ul class="dropdown-menu" data-bs-popper="none">
-                            <li class="{{ Request::is('seminar/pembimbing*') ? 'active' : 'nav-item' }}"data-menu=""><a
+                            {{-- <li class="{{ Request::is('seminar/pembimbing*') ? 'active' : 'nav-item' }}"data-menu=""><a
                                     class="dropdown-item d-flex align-items-center" href="/seminar/pembimbing"
                                     data-bs-toggle="" data-i18n="Leaflet Maps"><i data-feather="user"></i><span
                                         data-i18n="Leaflet Maps">Dosen Pembimbing Seminar</span></a>
-                            </li>
+                            </li> --}}
                             <li class="{{ Request::is('seminar/pengajuan-Seminar*') ? 'active' : 'nav-item' }}"data-menu="">
                                 <a class="dropdown-item d-flex align-items-center" href="/seminar/pengajuan-seminar"
                                     data-bs-toggle="" data-i18n="Leaflet Maps"><i data-feather="file-text"></i><span
