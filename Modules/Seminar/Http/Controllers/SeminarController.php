@@ -27,6 +27,7 @@ class SeminarController extends Controller
         }else{
         $history= HistoryPengajuanSeminar::select()->where('seminar_id', $seminar->id)->get();
         }
+        // return $seminar;
         return view('mahasiswa::seminar.index',[
             'seminar'=>$seminar,
             'dosenpembimbings'=>DosenPembimbingMagang::all(),

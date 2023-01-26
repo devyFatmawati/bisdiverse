@@ -238,6 +238,7 @@
                     </div>
                     <!-- add new card modal  -->
 
+                    @endif
                     <div class="modal fade" id="pengajuanseminar" tabindex="-1" aria-labelledby="addNewCardTitle"
                         aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
@@ -353,7 +354,6 @@
                             </div>
                         </div>
                     </div>
-                    @endif
             </div>
             <!--/ add new card modal  -->
 

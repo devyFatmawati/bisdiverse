@@ -391,7 +391,7 @@
                         </div>
                     </div>
                     <input type="hidden" name="status" value="Ditolak">
-                    <input type="hidden" name="jabatan" value="TU">
+                    <input type="hidden" name="jabatan" value="Kaprodi">
                     <input type="hidden" name="seminar_id" value="{{ $seminar->id }}">
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Submit</button>
@@ -420,8 +420,8 @@
                                 name="catatan"></textarea>
                         </div>
                     </div>
-                    <input type="hidden" name="status" value="Diverifikasi">
-                    <input type="hidden" name="jabatan" value="TU">
+                    <input type="hidden" name="status" value="Disetujui">
+                    <input type="hidden" name="jabatan" value="Kaprodi">
                     <input type="hidden" name="seminar_id" value="{{ $seminar->id }}">
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Submit</button>

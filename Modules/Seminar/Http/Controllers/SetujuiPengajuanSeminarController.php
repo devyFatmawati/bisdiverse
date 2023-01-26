@@ -18,7 +18,7 @@ class SetujuiPengajuanSeminarController extends Controller
     public function index()
     {
         return view('kaprodi::seminar.pengajuan', [
-            'mahasiswas' => Seminar::select()->whereIn('status', ['Diverifikasi TU', 'Ditinjau Kaprodi', 'Disetujui Kaprodi'])->get(),
+            'mahasiswas' => Seminar::select()->whereIn('status', ['Diverifikasi TU', 'Ditinjau Kaprodi'])->get(),
         ]);
     }
 
@@ -44,12 +44,12 @@ class SetujuiPengajuanSeminarController extends Controller
         ]);
 
         HistoryPengajuanSeminar::create([
-            'Seminar_id' => $id,
+            'seminar_id' => $id,
             'status' => $request->status,
             'jabatan' => $request->jabatan,
             'catatan' => $request->catatan,
         ]);
-        return redirect('/seminar/pengajuan-seminar')->with('success', 'Pengajuan seminar Telah' . $request->status);
+        return redirect('/seminar/pengajuan-seminar')->with('success', 'Pengajuan seminar Telah ' . $request->status);
     }
 
     /**
