@@ -78,7 +78,7 @@
                                     data-bs-toggle="" data-i18n="Leaflet Maps"><i data-feather="user"></i><span
                                         data-i18n="Leaflet Maps">Dosen Pembimbing Seminar</span></a>
                             </li> --}}
-                            <li class="{{ Request::is('seminar/pengajuan-Seminar*') ? 'active' : 'nav-item' }}"data-menu="">
+                            <li class="{{ Request::is('seminar/pengajuan-seminar*') ? 'active' : 'nav-item' }}"data-menu="">
                                 <a class="dropdown-item d-flex align-items-center" href="/seminar/pengajuan-seminar"
                                     data-bs-toggle="" data-i18n="Leaflet Maps"><i data-feather="file-text"></i><span
                                         data-i18n="Leaflet Maps">Pengajuan Seminar</span></a>
@@ -97,8 +97,8 @@
                                     data-bs-toggle="" data-i18n="Leaflet Maps"><i data-feather="user"></i><span
                                         data-i18n="Leaflet Maps">Dosen Pembimbing Judulskripsi</span></a>
                             </li> --}}
-                            <li class="{{ Request::is('judulskripsi/pengajuan*') ? 'active' : 'nav-item' }}"data-menu="">
-                                <a class="dropdown-item d-flex align-items-center" href="/judulskripsi/pengajuan"
+                            <li class="{{ Request::is('judulskripsi/pengajuan-judul*') ? 'active' : 'nav-item' }}"data-menu="">
+                                <a class="dropdown-item d-flex align-items-center" href="/judulskripsi/pengajuan-judul"
                                     data-bs-toggle="" data-i18n="Leaflet Maps"><i data-feather="file-text"></i><span
                                         data-i18n="Leaflet Maps">Pengajuan Judul Skripsi</span></a>
                             </li>

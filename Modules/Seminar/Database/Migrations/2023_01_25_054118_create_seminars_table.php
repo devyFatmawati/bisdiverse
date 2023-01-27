@@ -27,6 +27,7 @@ return new class extends Migration
             $table->text('skpi');
             $table->text('spp');
             $table->text('sks');
+            $table->text('status');
             $table->text('judul_skripsi_id')->nullable();
             $table->text('user_id')->nullable();
             $table->timestamps();

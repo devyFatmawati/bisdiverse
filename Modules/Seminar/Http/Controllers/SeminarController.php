@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Modules\Admin\Entities\Mahasiswa;
+use Modules\Judulskripsi\Entities\HistoryPengajuanJudul;
+use Modules\Judulskripsi\Entities\JudulSkripsi;
 use Modules\Magang\Entities\DosenPembimbingMagang;
 use Modules\Seminar\Entities\HistoryPengajuanSeminar;
 use Modules\Seminar\Entities\Seminar;
@@ -21,6 +23,7 @@ class SeminarController extends Controller
     {
         $user_id=Auth::user()->id;
         $mahasiswa=Mahasiswa::where('id',$user_id)->get()->first();
+        $judul= JudulSkripsi::select()->where('mahasiswa_npm', $mahasiswa->npm)->whereIn('status', ['Disetujui Kaprodi'])->latest()->first();
         $seminar= Seminar::select()->where('mahasiswa_npm', $mahasiswa->npm)->latest()->first();
         if($seminar==null){
             $history=null;
@@ -30,6 +33,7 @@ class SeminarController extends Controller
         // return $seminar;
         return view('mahasiswa::seminar.index',[
             'seminar'=>$seminar,
+            'judul'=>$judul,
             'dosenpembimbings'=>DosenPembimbingMagang::all(),
             'mahasiswa'=>$mahasiswa,
             'historys'=>$history,
@@ -97,6 +101,7 @@ class SeminarController extends Controller
             'skpi'=>$skpi,
             'spp'=>$spp,
             'sks'=>$sks,
+            'judul_skripsi_id'=>$request->judul_skripsi_id,
             'status'=>'Diajukan Mahasiswa',
         ]);
 

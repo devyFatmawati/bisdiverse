@@ -107,10 +107,10 @@
                                             <button href="" class="btn btn-warning" data-bs-toggle="modal"
                                                 data-bs-target="#pengajuanseminar">Buat Ulang Pengajuan</button>
                                         @elseif ($judul->status == 'Ditolak Kaprodi')
-                                            <button href="" class="btn btn-warning" data-bs-toggle="modal"
+                                           <button href="" class="btn btn -warning" data-bs-toggle="modal"
                                                 data-bs-target="#pengajuanseminar">Buat Ulang Pengajuan</button>
                                         @elseif ($judul->status == 'Disetujui Kaprodi')
-                                            <a href="/seminar/{{ $judul->id }}"
+                                            <a href="/seminar"
                                                 class="btn btn-primary">Buat Pengajuan Seminar</a>
                                         @else
                                         @endif
@@ -262,7 +262,7 @@
                                                     <label class="form-label" for="modalAddCardName">Konsentrasi</label>
                                                     <select class="select2 form-select" id="select2-basic" name="konsentrasi"
                                                     required>
-                                                    <option label=""></option>
+                                                    <option label="">Pilih Konsentrasi</option>
                                                         <option>Entrepreneur</option>
                                                         <option>Data Analyst</option>
                                                         <option>Digital Marketing</option>
@@ -273,7 +273,7 @@
                                                     Pembimbing</label>
                                                 <select class="select2 form-select" id="select2-basic" name="kds_dosen"
                                                     required>
-                                                    <option label=""></option>
+                                                    <option label="">Pilih DOsen Pembimbing 1 </option>
                                                     @foreach ($dosenpembimbings as $dosen)
                                                         <option value="{{ $dosen->dosen_kds }}">{{ $dosen->dosen->nama }}
                                                         </option>
@@ -285,7 +285,7 @@
                                                     Pembimbing</label>
                                                 <select class="select2 form-select" id="select2-basic"
                                                     name="anggota_dosen" required>
-                                                    <option label=""></option>
+                                                    <option label="">Pilih Dosen Pembimbing 2</option>
                                                     @foreach ($dosenpembimbings as $dosen)
                                                         <option value="{{ $dosen->dosen_kds }}">{{ $dosen->dosen->nama }}
                                                         </option>

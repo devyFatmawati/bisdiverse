@@ -28,7 +28,7 @@
                 <!-- Card Advance -->
 
 
-                @if ($seminar)
+                @if ($judul)
                     <div class="row match-height">
                         <!-- Developer Meetup Card -->
                         <div class="col-lg-4 col-md-6 col-12">
@@ -41,16 +41,16 @@
                                     <div class="meetup-header d-flex align-items-center">
                                         <div class="meetup-day">
                                             <h6 class="mb-0">IPK</h6>
-                                            <h3 class="mb-0">{{ $seminar->mahasiswa->ipk }}</h3>
+                                            <h3 class="mb-0">{{ $judul->mahasiswa->ipk }}</h3>
                                         </div>
                                         <div class="my-auto">
-                                            <h4 class="card-title mb-25">{{ $seminar->mahasiswa->nama }}</h4>
-                                            <p class="card-text mb-0">Konsentrasi : {{ $seminar->konsentrasi }}</p>
+                                            <h4 class="card-title mb-25">{{ $judul->mahasiswa->nama }}</h4>
+                                            <p class="card-text mb-0">Konsentrasi : {{ $judul->konsentrasi }} </p>
                                         </div>
                                     </div>
                                     <div class="d-flex flex-row meetings">
                                         <div class="content-body">
-                                            <h4 class="mb-0">Judul Penelitian : {{ $seminar->judul_penelitian }}</h4>
+                                            <h4 class="mb-0">Judul Penelitian : {{ $judul->judul_penelitian }}</h4>
                                         </div>
                                     </div>
                                     <div class="d-flex flex-row meetings">
@@ -61,7 +61,7 @@
                                         </div>
                                         <div class="content-body">
                                             <h6 class="mb-0">Ketua Dosen Pembimbing</h6>
-                                            <small>{{ $seminar->ketuadosen->nama }}</small>
+                                            <small>{{ $judul->ketuadosen->nama }}</small>
                                         </div>
                                     </div>
                                     <div class="d-flex flex-row meetings">
@@ -72,7 +72,7 @@
                                         </div>
                                         <div class="content-body">
                                             <h6 class="mb-0">Angggota Dosen Pembimbing</h6>
-                                            <small>{{ $seminar->anggotaadosen->nama }}</small>
+                                            <small>{{ $judul->anggotaadosen->nama }}</small>
                                         </div>
                                     </div>
                                     <div class="d-flex flex-row meetings">
@@ -84,55 +84,25 @@
                                         <div class="content-body">
                                             <h6 class="mb-0">Status Pengajuan</h6>
                                             <small>
-                                                @if ($seminar->status == 'Diajukan Mahasiswa')
-                                                    <span class="badge bg-primary">{{ $seminar->status }}</span>
-                                                @elseif ($seminar->status == 'Ditinjau TU')
-                                                    <span class="badge bg-info">{{ $seminar->status }}</span>
-                                                @elseif ($seminar->status == 'Diverifikasi TU')
-                                                    <span class="badge bg-success">{{ $seminar->status }}</span>
-                                                @elseif ($seminar->status == 'Ditolak TU')
-                                                    <span class="badge bg-danger">{{ $seminar->status }}</span>
-                                                @elseif ($seminar->status == 'Ditinjau Kaprodi')
-                                                    <span class="badge bg-info">{{ $seminar->status }}</span>
-                                                @elseif ($seminar->status == 'Disetujui Kaprodi')
-                                                    <span class="badge bg-success">{{ $seminar->status }}</span>
-                                                @elseif ($seminar->status == 'Ditolak Kaprodi')
-                                                    <span class="badge bg-danger">{{ $seminar->status }}</span>
+                                                @if ($judul->status == 'Diajukan Mahasiswa')
+                                                    <span class="badge bg-primary">{{ $judul->status }}</span>
+                                                @elseif ($judul->status == 'Ditinjau TU')
+                                                    <span class="badge bg-info">{{ $judul->status }}</span>
+                                                @elseif ($judul->status == 'Diverifikasi TU')
+                                                    <span class="badge bg-success">{{ $judul->status }}</span>
+                                                @elseif ($judul->status == 'Ditolak TU')
+                                                    <span class="badge bg-danger">{{ $judul->status }}</span>
+                                                @elseif ($judul->status == 'Ditinjau Kaprodi')
+                                                    <span class="badge bg-info">{{ $judul->status }}</span>
+                                                @elseif ($judul->status == 'Disetujui Kaprodi')
+                                                    <span class="badge bg-success">{{ $judul->status }}</span>
+                                                @elseif ($judul->status == 'Ditolak Kaprodi')
+                                                    <span class="badge bg-danger">{{ $judul->status }}</span>
                                                 @endif
                                             </small>
                                         </div>
                                     </div>
-                                    <div class="d-flex flex-row meetings">
-                                        <div class="avatar bg-light-primary rounded me-1">
-                                            <div class="avatar-content">
-                                                <i data-feather="clipboard" class="avatar-icon font-medium-3"></i>
-                                            </div>
-                                        </div>
-                                        <div class="content-body">
-                                            <h6 class="mb-0">Dokumen</h6>
-                                            <small>Kelengkapan Dokumen Mahasiswa</small>
-                                        </div>
-                                    </div>
-                                    
-                                    <hr>
-                                        <div class="text-center mb-1">
-                                            <button class="btn btn-primary" data-bs-toggle="modal"
-                                            data-bs-target="#proposal">Proposal</button>
-                                            <button class="btn btn-primary" data-bs-toggle="modal"
-                                            data-bs-target="#ppt">PPT</button>
-                                            <button class="btn btn-primary" data-bs-toggle="modal"
-                                            data-bs-target="#transkip">Transkip</button>
-                                            <button class="btn btn-primary" data-bs-toggle="modal"
-                                            data-bs-target="#peec">PEEC</button>
-                                        </div>
-                                        <div class="text-center mb-1">
-                                            <button class="btn btn-primary" data-bs-toggle="modal"
-                                            data-bs-target="#skip">SKIP</button>
-                                            <button class="btn btn-primary" data-bs-toggle="modal"
-                                            data-bs-target="#spp">SPP</button>
-                                            <button class="btn btn-primary" data-bs-toggle="modal"
-                                            data-bs-target="#sks">SPP</button>
-                                        </div>
+            <hr>
                                 </div>
                                 <div class="text-center mb-1">
                                     <button class="btn btn-outline-danger me-1" data-bs-toggle="modal"
@@ -150,7 +120,7 @@
                                 <div class="card-header">
                                     <div class="d-flex align-items-center">
                                         <i data-feather="list" class="user-timeline-title-icon"></i>
-                                        <h4 class="card-title">History Pengajuan Seminar</h4>
+                                        <h4 class="card-title">History Pengajuan Judul Skripsi</h4>
                                     </div>
                                     <i data-feather="more-vertical" class="font-medium-3 cursor-pointer"></i>
                                 </div>
@@ -244,132 +214,6 @@
     <!-- END: Content-->
 
     <!-- Modal -->
-    <div class="modal fade text-start" id="proposal" tabindex="-1" aria-labelledby="myModalLabel16"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel16">Proposal Seminar</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <iframe src="{{ asset('storage/' . $seminar->proposal) }}" width="100%" height="500"
-                        style="border:0px"></iframe>
-                </div>
-                {{-- <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Accept</button>
-                </div> --}}
-            </div>
-        </div>
-    </div>
-    <div class="modal fade text-start" id="ppt" tabindex="-1" aria-labelledby="myModalLabel16"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel16">PPT Seminar</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <iframe src="{{ asset('storage/' . $seminar->ppt) }}" width="100%" height="500"
-                        style="border:0px"></iframe>
-                </div>
-                {{-- <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Accept</button>
-                </div> --}}
-            </div>
-        </div>
-    </div>
-    <div class="modal fade text-start" id="transkip" tabindex="-1" aria-labelledby="myModalLabel16"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel16">Transkip Nilai</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <iframe src="{{ asset('storage/' . $seminar->transkip) }}" width="100%" height="500"
-                        style="border:0px"></iframe>
-                </div>
-                {{-- <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Accept</button>
-                </div> --}}
-            </div>
-        </div>
-    </div>
-    <div class="modal fade text-start" id="peec" tabindex="-1" aria-labelledby="myModalLabel16"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel16">PEEC</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <iframe src="{{ asset('storage/' . $seminar->peec) }}" width="100%" height="500"
-                        style="border:0px"></iframe>
-                </div>
-                {{-- <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Accept</button>
-                </div> --}}
-            </div>
-        </div>
-    </div>
-    <div class="modal fade text-start" id="skip" tabindex="-1" aria-labelledby="myModalLabel16"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel16">SKIP</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <iframe src="{{ asset('storage/' . $seminar->skip) }}" width="100%" height="500"
-                        style="border:0px"></iframe>
-                </div>
-                {{-- <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Accept</button>
-                </div> --}}
-            </div>
-        </div>
-    </div>
-    <div class="modal fade text-start" id="spp" tabindex="-1" aria-labelledby="myModalLabel16"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel16">Bukti Pembayaran SPP</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <iframe src="{{ asset('storage/' . $seminar->spp) }}" width="100%" height="500"
-                        style="border:0px"></iframe>
-                </div>
-                {{-- <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Accept</button>
-                </div> --}}
-            </div>
-        </div>
-    </div>
-    <div class="modal fade text-start" id="sks" tabindex="-1" aria-labelledby="myModalLabel16"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel16">Bukti Pembayaran SKS</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <iframe src="{{ asset('storage/' . $seminar->sks) }}" width="100%" height="500"
-                        style="border:0px"></iframe>
-                </div>
-                {{-- <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Accept</button>
-                </div> --}}
-            </div>
-        </div>
-    </div>
 
     <!-- Modal -->
     <div class="modal fade text-start" id="tolak" tabindex="-1" aria-labelledby="myModalLabel33"
@@ -377,11 +221,11 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel33">Apakah Anda Yakin Ingin Menolak Pengajuan Seminar ini ?
+                    <h4 class="modal-title" id="myModalLabel33">Apakah Anda Yakin Ingin Menolak Pengajuan Judul Skripsi ini ?
                     </h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="/seminar/pengajuan-seminar" method='POST'>
+                <form action="/judulskripsi/pengajuan-judul" method='POST'>
                     @csrf
                     <div class="modal-body">
                         <label>Catatan : </label>
@@ -392,7 +236,7 @@
                     </div>
                     <input type="hidden" name="status" value="Ditolak">
                     <input type="hidden" name="jabatan" value="Kaprodi">
-                    <input type="hidden" name="seminar_id" value="{{ $seminar->id }}">
+                    <input type="hidden" name="judul_skripsi_id" value="{{ $judul->id }}">
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Submit</button>
                     </div>
@@ -407,11 +251,11 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel33">Apakah Anda Yakin Ingin Setujui Pengajuan Seminar ini ?
+                    <h4 class="modal-title" id="myModalLabel33">Apakah Anda Yakin Ingin Setujui Pengajuan Judul Skripsi ini ?
                     </h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="/seminar/pengajuan-seminar" method='POST'>
+                <form action="/judulskripsi/pengajuan-judul" method='POST'>
                     @csrf
                     <div class="modal-body">
                         <label>Catatan : </label>
@@ -422,7 +266,7 @@
                     </div>
                     <input type="hidden" name="status" value="Disetujui">
                     <input type="hidden" name="jabatan" value="Kaprodi">
-                    <input type="hidden" name="seminar_id" value="{{ $seminar->id }}">
+                    <input type="hidden" name="judul_skripsi_id" value="{{ $judul->id }}">
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Submit</button>
                     </div>

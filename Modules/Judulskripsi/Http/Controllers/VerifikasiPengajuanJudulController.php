@@ -37,7 +37,19 @@ class VerifikasiPengajuanJudulController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // return $request;
+        $id = $request->judul_skripsi_id;
+        JudulSkripsi::where('id', $id)->update([
+            'status' => $request->status.' '.'TU',
+        ]);
+
+        HistoryPengajuanJudul::create([
+            'judul_skripsi_id' => $id,
+            'status' => $request->status,
+            'jabatan' => $request->jabatan,
+            'catatan' => $request->catatan,
+        ]);
+        return redirect('/judulskripsi/pengajuan')->with('success', 'Pengajuan Judul Skripsi Telah ' . $request->status);
     }
 
     /**

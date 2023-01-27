@@ -236,7 +236,7 @@
                     </div>
                     <input type="hidden" name="status" value="Ditolak">
                     <input type="hidden" name="jabatan" value="TU">
-                    <input type="hidden" name="seminar_id" value="{{ $judul->id }}">
+                    <input type="hidden" name="judul_skripsi_id" value="{{ $judul->id }}">
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Submit</button>
                     </div>
@@ -266,7 +266,7 @@
                     </div>
                     <input type="hidden" name="status" value="Diverifikasi">
                     <input type="hidden" name="jabatan" value="TU">
-                    <input type="hidden" name="seminar_id" value="{{ $judul->id }}">
+                    <input type="hidden" name="judul_skripsi_id" value="{{ $judul->id }}">
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Submit</button>
                     </div>

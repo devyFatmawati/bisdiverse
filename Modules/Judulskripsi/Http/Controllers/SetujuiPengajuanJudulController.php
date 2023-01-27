@@ -5,6 +5,8 @@ namespace Modules\Judulskripsi\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Modules\Admin\Entities\Mahasiswa;
+use Modules\Judulskripsi\Entities\HistoryPengajuanJudul;
 use Modules\Judulskripsi\Entities\JudulSkripsi;
 
 class SetujuiPengajuanJudulController extends Controller
@@ -35,7 +37,19 @@ class SetujuiPengajuanJudulController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // return $request;
+        $id = $request->judul_skripsi_id;
+        JudulSkripsi::where('id', $id)->update([
+            'status' => $request->status . ' ' . 'Kaprodi',
+        ]);
+
+        HistoryPengajuanJudul::create([
+            'judul_skripsi_id' => $id,
+            'status' => $request->status,
+            'jabatan' => $request->jabatan,
+            'catatan' => $request->catatan,
+        ]);
+        return redirect('/judulskripsi/pengajuan-judul')->with('success', 'Pengajuan Judul Skripsi Telah ' . $request->status);
     }
 
     /**
@@ -45,7 +59,26 @@ class SetujuiPengajuanJudulController extends Controller
      */
     public function show($id)
     {
-        return view('judulskripsi::show');
+       $judul = JudulSkripsi::where('id', $id)->get()->first();
+        $mahasiswa = Mahasiswa::select()->where('npm',$judul->mahasiswa_npm)->get()->first();
+
+        JudulSkripsi::where('id', $id)->update([
+            'status' => 'Ditinjau Kaprodi',
+        ]);
+
+        $cekhistory = HistoryPengajuanJudul::select()->where('judul_skripsi_id', $id)->where('status', 'Ditinjau')->where('Jabatan', 'TU')->get();
+        if ($cekhistory->count() == 0) {
+            HistoryPengajuanJudul::create([
+                'judul_skripsi_id' => $id,
+                'status' => 'Ditinjau',
+                'jabatan' => 'Kaprodi',
+            ]);
+        }
+        return view('kaprodi::judulskripsi.lihat', [
+            'judul' =>$judul,
+            'mahasiswa' => $mahasiswa,
+            'historys' => HistoryPengajuanJudul::select()->where('judul_skripsi_id',$judul->id)->get(),
+        ]);
     }
 
     /**

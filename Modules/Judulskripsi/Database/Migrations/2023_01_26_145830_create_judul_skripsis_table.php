@@ -21,6 +21,7 @@ return new class extends Migration
             $table->text('kds_dosen');
             $table->text('anggota_dosen');
             $table->text('user_id')->nullable();
+            $table->text('status');
             $table->timestamps();
         });
     }
