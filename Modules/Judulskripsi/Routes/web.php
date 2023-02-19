@@ -11,18 +11,26 @@
 |
 */
 
+use Modules\Judulskripsi\Http\Controllers\DosenBimbinganMahasiswaSkripsiController;
 use Modules\Judulskripsi\Http\Controllers\JudulskripsiController;
+use Modules\Judulskripsi\Http\Controllers\PembimbingSkripsiController;
 use Modules\Judulskripsi\Http\Controllers\SetujuiPengajuanJudulController;
 use Modules\Judulskripsi\Http\Controllers\VerifikasiPengajuanJudulController;
 
 //admin
 Route::prefix('judulskripsi')->middleware(['auth:sanctum', 'verified', 'role:0', 'jabatan:0'])->group(function () {
     Route::resource('/pengajuan', VerifikasiPengajuanJudulController::class);
+    Route::resource('/pembimbing', PembimbingSkripsiController::class);
 });
 
 // role kaprodi
 Route::prefix('judulskripsi')->middleware(['auth:sanctum', 'verified', 'role:1', 'jabatan:1'])->group(function () {
     Route::resource('/pengajuan-judul', SetujuiPengajuanJudulController::class);
+});
+
+// role dosen
+Route::prefix('judulskripsi')->middleware(['auth:sanctum', 'verified', 'role:1', 'jabatan:2'])->group(function () {
+    Route::resource('/bimbingan', DosenBimbinganMahasiswaSkripsiController::class);
 });
 
 // role mahasiswa
