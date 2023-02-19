@@ -112,7 +112,7 @@
                                         </a>
                                     </div>
                                     <div class="col-md-6 mt-2">
-                                        <a href="/pengajuan" class="btn btn-primary btn-block form-control">Judul Skripsi
+                                        <a href="/judulskripsi" class="btn btn-primary btn-block form-control">Judul Skripsi
                                         </a>
                                     </div>
                                     @if (Module::collections()->has('Magang'))

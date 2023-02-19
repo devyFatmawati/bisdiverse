@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Modules\Admin\Entities\Mahasiswa;
+use Modules\Judulskripsi\Entities\DosenPembimbingSkripsi;
 use Modules\Judulskripsi\Entities\HistoryPengajuanJudul;
 use Modules\Judulskripsi\Entities\JudulSkripsi;
-use Modules\Magang\Entities\DosenPembimbingMagang;
 use Modules\Seminar\Entities\HistoryPengajuanSeminar;
 use Modules\Seminar\Entities\Seminar;
 
@@ -34,7 +34,7 @@ class SeminarController extends Controller
         return view('mahasiswa::seminar.index',[
             'seminar'=>$seminar,
             'judul'=>$judul,
-            'dosenpembimbings'=>DosenPembimbingMagang::all(),
+            'dosenpembimbings'=>DosenPembimbingSkripsi::all(),
             'mahasiswa'=>$mahasiswa,
             'historys'=>$history,
         ]);

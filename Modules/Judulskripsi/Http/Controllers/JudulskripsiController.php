@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Modules\Admin\Entities\Mahasiswa;
+use Modules\Judulskripsi\Entities\DosenPembimbingSkripsi;
 use Modules\Judulskripsi\Entities\HistoryPengajuanJudul;
 use Modules\Judulskripsi\Entities\JudulSkripsi;
-use Modules\Magang\Entities\DosenPembimbingMagang;
 
 class JudulskripsiController extends Controller
 {
@@ -30,7 +30,7 @@ class JudulskripsiController extends Controller
         // return $judul;
         return view('mahasiswa::judulskripsi.index',[
             'judul'=>$judul,
-            'dosenpembimbings'=>DosenPembimbingMagang::all(),
+            'dosenpembimbings'=>DosenPembimbingSkripsi::all(),
             'mahasiswa'=>$mahasiswa,
             'historys'=>$history,
         ]);

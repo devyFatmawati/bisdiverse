@@ -20,7 +20,7 @@
         <div class="navbar-container main-menu-content" data-menu="menu-container">
             <!-- include ../../../includes/mixins-->
             <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
-                <li class="{{ Request::is('/', 'admin') ? 'active' : 'nav-item' }}"><a
+                <li class="{{ Request::is('/', 'dosen') ? 'active' : 'nav-item' }}"><a
                         class="toggle nav-link d-flex align-items-center" href="/"><i
                             data-feather="home"></i><span data-i18n="Dashboards">Dashboard</span></a>
                 </li>
